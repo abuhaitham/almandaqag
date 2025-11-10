@@ -1,8 +1,9 @@
 import React from 'react';
 import PageHeader from '../../components/PageHeader';
-import comprehensiveModelPdf from '../../assets/docs/النموذج-الشامل-تحديث-6.pdf';
 
 const ComprehensiveModelPage: React.FC = () => {
+  const comprehensiveModelPdf = '/assets/docs/النموذج-الشامل-تحديث-6.pdf';
+  
   return (
     <>
       <PageHeader title="النموذج الشامل للجمعيات" breadcrumb="عن الجمعية / النموذج الشامل للجمعيات" />

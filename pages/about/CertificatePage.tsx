@@ -1,8 +1,9 @@
 import React from 'react';
 import PageHeader from '../../components/PageHeader';
-import certificatePDF from '../../assets/docs/شهادة الترخيص.pdf';
 
 const CertificatePage: React.FC = () => {
+  const certificatePDF = '/assets/docs/شهادة الترخيص.pdf';
+  
   return (
     <>
       <PageHeader title="شهادة التسجيل" breadcrumb="عن الجمعية / شهادة التسجيل" />

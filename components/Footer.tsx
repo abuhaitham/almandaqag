@@ -1,5 +1,4 @@
 import React from 'react';
-import LogoImg from '../assets/img/شعار جمعية بلخزمر2.webp';
 import type { Page } from '../App';
 
 interface FooterProps {
@@ -21,12 +20,11 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
           <div className="md:col-span-2 lg:col-span-1">
              <a href="#" onClick={(e) => handleNavClick(e, 'home')} className="mb-4 block">
                <span className="inline-flex items-center gap-3 text-white">
-                 <img src={LogoImg} alt="شعار جمعية بلخزمر" className="h-10 w-auto shrink-0" />
-                 <span className="text-2xl font-extrabold">جمعية التنمية الأهلية ببلخزمر</span>
+                 <span className="text-2xl font-extrabold">جمعية الباحة الخضراء</span>
                </span>
              </a>
             <p className="text-gray-400 leading-relaxed">
-              جمعية أهلية تسعى لتنمية مجتمع بلخزمر عبر مشاريع وبرامج مستدامة، بالتعاون مع شركاء النجاح وأفراد المجتمع.
+              جمعية أهلية تسعى لتنمية المجتمع عبر مشاريع وبرامج مستدامة، بالتعاون مع شركاء النجاح وأفراد المجتمع.
             </p>
           </div>
 
@@ -63,8 +61,8 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 href="https://youtube.com/@kzmr247?si=trKDp5_R3EQDOr1U"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="القناة الرسمية لجمعية التنمية الأهلية ببلخزمر"
-                aria-label="القناة الرسمية لجمعية التنمية الأهلية ببلخزمر"
+                title="القناة الرسمية لجمعية الباحة الخضراء"
+                aria-label="القناة الرسمية لجمعية الباحة الخضراء"
                 className="text-gray-400 hover:text-secondary transition-colors ml-3 inline-block"
               >
                 <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -84,7 +82,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
 
         </div>
         <div className="border-t border-gray-700 pt-6 mt-8 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} جمعية التنمية ببلخزمر. جميع الحقوق محفوظة.</p>
+          <p>&copy; {new Date().getFullYear()} جمعية الباحة الخضراء. جميع الحقوق محفوظة.</p>
         </div>
       </div>
     </footer>

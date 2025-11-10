@@ -79,7 +79,7 @@ const SatisfactionSurveyPage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-primary mb-4">جمعية التنمية الأهلية ببلخزمر</h2>
+              <h2 className="text-3xl font-bold text-primary mb-4">جمعية الباحة الخضراء</h2>
               <p className="text-gray-700 text-lg">
                 نقدر رأيك ونسعى دائمًا للتطوير. نأمل منك الإجابة على الأسئلة التالية بصدق وشفافية.
               </p>

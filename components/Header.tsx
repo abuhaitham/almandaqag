@@ -4,7 +4,6 @@ import type { Page } from '../App';
 // Fix: Corrected import path for constants.
 import { NAV_LINKS } from '../constants';
 import type { NavLink } from '../types';
-import LogoImg from '../assets/img/شعار جمعية بلخزمر2.webp';
 
 interface HeaderProps {
   currentPage: Page;
@@ -149,8 +148,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <a href="#" onClick={(e) => handleNavClick(e, 'home')} className="flex items-center gap-3 text-primary no-underline">
-            <img src={LogoImg} alt="شعار جمعية بلخزمر" className="h-10 w-auto shrink-0" />
-            <span className="text-2xl font-extrabold whitespace-nowrap">جمعية التنمية الأهلية ببلخزمر</span>
+            <span className="text-2xl font-extrabold whitespace-nowrap">جمعية الباحة الخضراء</span>
           </a>
 
           {/* Desktop Navigation */}

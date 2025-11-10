@@ -17,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({ setCurrentPage }) => {
       </div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in-down">
-          جمعية التنمية الأهلية ببلخزمر
+          جمعية الباحة الخضراء
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mb-8 animate-fade-in-up">
           نعمل معاً لبناء مجتمع حيوي ومنتج.

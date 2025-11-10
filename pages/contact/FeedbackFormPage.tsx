@@ -79,7 +79,7 @@ const FeedbackFormPage: React.FC = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg mb-8 border-r-4 border-primary">
               <h2 className="text-3xl font-bold text-primary mb-4">نرحب بملاحظاتكم واقتراحاتكم</h2>
               <p className="text-gray-700 text-lg leading-relaxed">
-                نحن في <strong>جمعية التنمية الأهلية ببلخزمر</strong> نؤمن بأهمية الاستماع لآرائكم وملاحظاتكم. 
+                نحن في <strong>جمعية الباحة الخضراء</strong> نؤمن بأهمية الاستماع لآرائكم وملاحظاتكم. 
                 نموذج الشكاوى والمقترحات يتيح لكم التواصل معنا بشكل مباشر لمشاركة أفكاركم، شكاواكم، أو استفساراتكم. 
                 كل رسالة تصلنا تحظى باهتمامنا الكامل ونعمل على معالجتها في أسرع وقت ممكن.
               </p>

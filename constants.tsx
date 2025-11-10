@@ -142,7 +142,7 @@ export const PARTNER_LOGOS: string[] = [
 ];
 
 export const BASIC_DATA: BasicDataItem[] = [
-    { label: 'اسم الجمعية', value: 'جمعية التنمية الأهلية ببلخزمر' },
+    { label: 'اسم الجمعية', value: 'جمعية الباحة الخضراء' },
     { label: 'رقم التسجيل', value: '4028' },
     { label: 'تاريخ التأسيس', value: '22 / 8 / 1443 هـ' },
     { label: 'المدينة', value: 'الباحة' },
@@ -163,7 +163,7 @@ export const ANNUAL_REPORTS_DATA: AnnualReport[] = [
 ];
 
 export const FINANCIAL_STATEMENTS_DATA: FinancialStatement[] = [
-    { title: 'القوائم المالية لعام 2024', href: '/assets/docs/القوائم المالية المعتمدة التنمية ببلخزمر2024.pdf' },
+    { title: 'القوائم المالية لعام 2024', href: '/assets/docs/القوائم المالية المعتمدة جمعية الباحة الخضراء2024.pdf' },
     { title: 'القوائم المالية لعام 2023', href: '#' },
     { title: 'القوائم المالية لعام 2022', href: '#' },
 ];

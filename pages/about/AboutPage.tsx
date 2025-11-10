@@ -13,7 +13,7 @@ const AboutPage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md">
             <h2 className="text-3xl font-extrabold text-primary mb-6 text-center">
-              جمعية التنمية ببلخزمر
+              جمعية الباحة الخضراء
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
               بناءً على نظام الجمعيات والمؤسسات الأهلية الصادر بالمرسوم الملكي رقم (م/8) وتاريخ 19/02/1437هـ فإن هذه الجمعية تم إنشاؤها وفق إجراءات مواءمة جمعية التنمية الاجتماعية الأهلية بالخطة المرخصة
