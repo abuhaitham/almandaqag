@@ -53,8 +53,6 @@ import SatisfactionResultsPage from './pages/SatisfactionResultsPage';
 import AdminLoginPage from './pages/AdminLoginPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import AnalyticsPage from './pages/AnalyticsPage';
-import { supabase } from './lib/supabaseClient';
-import { trackPageVisit } from './lib/analytics';
 
 export type Page = string;
 
@@ -63,23 +61,10 @@ function App() {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    const getTestData = async () => {
-      const { data, error } = await supabase.from('test').select('*');
-      if (error) {
-        console.error('Error fetching test data:', error);
-      } else {
-        console.log('Test data:', data);
-      }
-    };
-    getTestData();
-    
     // Check if user is already logged in as admin
     const adminStatus = localStorage.getItem('isAdmin');
     setIsAdmin(adminStatus === 'true');
-    
-    // Track page visit
-    trackPageVisit(currentPage);
-    
+
     window.scrollTo(0, 0);
   }, [currentPage]);
 
