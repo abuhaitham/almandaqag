@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from '../../components/PageHeader';
 
 const CertificatePage: React.FC = () => {
-  const certificatePDF = '/assets/docs/شهادة الترخيص.pdf';
+  const certificatePDF = '/assets/docs/شهادة-التسجيل-الجمعية-الزراعية-بالمندق.pdf';
   
   return (
     <>
@@ -25,7 +25,7 @@ const CertificatePage: React.FC = () => {
             <div className="text-center mt-6">
                 <a
                     href={certificatePDF}
-                    download="شهادة-تسجيل-جمعية-الباحة-الخضراء.pdf"
+                    download="شهادة-تسجيل-الجمعية-الزراعية-بالمندق.pdf"
                     className="bg-primary text-white font-bold py-2 px-4 rounded hover:bg-secondary transition-colors"
                 >
                     تحميل شهادة التسجيل

@@ -27,9 +27,13 @@ const FormsPage: React.FC = () => {
                         <DocumentTextIcon className="w-8 h-8 text-primary ml-4" />
                         <span className="font-semibold text-xl text-gray-800">{item.title}</span>
                     </div>
-                  <a href={item.href} target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors">
-                    تحميل
-                  </a>
+                  {item.href === '#' ? (
+                    <span className="bg-gray-400 text-white font-bold py-2 px-5 rounded-md text-sm">قريبا</span>
+                  ) : (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors">
+                      تحميل
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

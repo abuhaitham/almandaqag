@@ -79,7 +79,7 @@ const FeedbackFormPage: React.FC = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg mb-8 border-r-4 border-primary">
               <h2 className="text-3xl font-bold text-primary mb-4">نرحب بملاحظاتكم واقتراحاتكم</h2>
               <p className="text-gray-700 text-lg leading-relaxed">
-                نحن في <strong>جمعية الباحة الخضراء</strong> نؤمن بأهمية الاستماع لآرائكم وملاحظاتكم. 
+                نحن في <strong>الجمعية التعاونية الزراعية بالمندق</strong> نؤمن بأهمية الاستماع لآرائكم وملاحظاتكم. 
                 نموذج الشكاوى والمقترحات يتيح لكم التواصل معنا بشكل مباشر لمشاركة أفكاركم، شكاواكم، أو استفساراتكم. 
                 كل رسالة تصلنا تحظى باهتمامنا الكامل ونعمل على معالجتها في أسرع وقت ممكن.
               </p>
@@ -289,8 +289,8 @@ const FeedbackFormPage: React.FC = () => {
             <div className="mt-8 bg-gradient-to-r from-primary to-primary-dark text-white p-6 rounded-lg shadow-lg">
               <h3 className="text-xl font-bold mb-3">طرق التواصل الأخرى</h3>
               <div className="space-y-2 text-white/90">
-                <p>البريد الإلكتروني: kzmr274@gmail.com</p>
-                <p>الهاتف: 0506659700</p>
+                <p>البريد الإلكتروني: info@almandaqag.org.sa</p>
+                <p>الهاتف: 0503774124</p>
                 <p>أوقات العمل: الأحد - الخميس (8:00 ص - 4:00 م)</p>
               </div>
             </div>

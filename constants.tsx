@@ -87,10 +87,7 @@ export const NAV_LINKS: NavLink[] = [
         label: 'الحوكمة', href: '#', id: 'governance',
         subLinks: [
             { label: 'وثائق الحوكمة', href: '#', id: 'governanceGuides' },
-            { label: 'النماذج', href: '#', id: 'forms' },
-            { label: 'اللوائح', href: '#', id: 'regulations' },
-            { label: 'السياسات', href: '#', id: 'policies' },
-            { label: 'الجمعية العمومية', href: '#', id: 'generalAssemblyGov' },
+            { label: 'التقارير المالية', href: '#', id: 'financialReports' },
         ]
     },
     { label: 'التقارير', href: '#', id: 'reports' },
@@ -114,22 +111,22 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const STATS_DATA: Stat[] = [
-    { icon: UsersIcon, value: "1,200+", label: "مستفيد" },
-    { icon: HeartIcon, value: "300+", label: "متطوع" },
-    { icon: LightBulbIcon, value: "50+", label: "مشروع" },
-    { icon: CashIcon, value: "5M+", label: "إجمالي الصرف" },
+    { icon: UsersIcon, value: "500+", label: "مزارع مستفيد" },
+    { icon: HeartIcon, value: "100+", label: "عضو" },
+    { icon: LightBulbIcon, value: "30+", label: "مشروع زراعي" },
+    { icon: CashIcon, value: "2M+", label: "إجمالي الدعم" },
 ];
 
 export const PROJECTS_DATA: Project[] = [
-    { image: PROJECT_IMAGE_1, title: 'مشروع كفالة الأيتام', description: 'نوفر الرعاية الشاملة للأيتام وأسرهم.' },
-    { image: PROJECT_IMAGE_2, title: 'مشروع السلة الغذائية', description: 'توزيع السلال الغذائية على الأسر المحتاجة.' },
-    { image: PROJECT_IMAGE_3, title: 'مشروع تفطير صائم', description: 'تقديم وجبات الإفطار للصائمين في رمضان.' },
+    { image: PROJECT_IMAGE_1, title: 'مشروع استصلاح الأراضي الزراعية', description: 'استصلاح وتأهيل الأراضي الزراعية لزيادة الإنتاج المحلي.' },
+    { image: PROJECT_IMAGE_2, title: 'مشروع دعم المزارعين', description: 'تقديم الدعم الفني والمادي للمزارعين وأصحاب المواشي.' },
+    { image: PROJECT_IMAGE_3, title: 'مشروع التدريب الزراعي', description: 'عقد الدورات والندوات لتحسين الممارسات الزراعية.' },
 ];
 
 export const NEWS_DATA: NewsArticle[] = [
-    { image: NEWS_IMAGE_1, title: 'خبر ١', date: '15 ديسمبر 2023' },
-    { image: NEWS_IMAGE_2, title: 'خبر ٢', date: '5 ديسمبر 2023' },
-    { image: NEWS_IMAGE_3, title: 'خبر ٣', date: '20 نوفمبر 2023' },
+    { image: NEWS_IMAGE_1, title: 'انطلاق موسم الحصاد الزراعي', date: '15 مارس 2025' },
+    { image: NEWS_IMAGE_2, title: 'دورة تدريبية في الزراعة الحديثة', date: '5 فبراير 2025' },
+    { image: NEWS_IMAGE_3, title: 'توزيع مستلزمات زراعية على المزارعين', date: '20 يناير 2025' },
 ];
 
 export const PARTNER_LOGOS: string[] = [
@@ -142,20 +139,20 @@ export const PARTNER_LOGOS: string[] = [
 ];
 
 export const BASIC_DATA: BasicDataItem[] = [
-    { label: 'اسم الجمعية', value: 'جمعية الباحة الخضراء' },
-    { label: 'رقم التسجيل', value: '4028' },
-    { label: 'تاريخ التأسيس', value: '22 / 8 / 1443 هـ' },
-    { label: 'المدينة', value: 'الباحة' },
-    { label: 'البريد الإلكتروني', value: 'kzmr274@gmail.com' },
-    { label: 'رقم الهاتف', value: '0506659700' },
+    { label: 'اسم الجمعية', value: 'الجمعية التعاونية الزراعية بالمندق' },
+    { label: 'رقم التسجيل', value: '10140' },
+    { label: 'تاريخ التأسيس', value: '1444 هـ' },
+    { label: 'المدينة', value: 'المندق' },
+    { label: 'البريد الإلكتروني', value: 'info@almandaqag.org.sa' },
+    { label: 'رقم الهاتف', value: '0503774124' },
 ];
 
 export const BOARD_MEMBERS: BoardMember[] = [
-    { name: 'أ.د.عبدالرحمن مساعد عيدان' },
-    { name: 'أ.أحمد محمد سعيد' },
-    { name: 'أ.عبدالكريم محمد عوضه' },
-    { name: 'أ.صالح عيدان صالح' },
-    { name: 'أ.صالح عبدالله حسن' },
+    { name: 'رئيس مجلس الإدارة' },
+    { name: 'نائب رئيس مجلس الإدارة' },
+    { name: 'عضو مجلس الإدارة' },
+    { name: 'عضو مجلس الإدارة' },
+    { name: 'عضو مجلس الإدارة' },
 ];
 
 export const ANNUAL_REPORTS_DATA: AnnualReport[] = [
@@ -163,14 +160,15 @@ export const ANNUAL_REPORTS_DATA: AnnualReport[] = [
 ];
 
 export const FINANCIAL_STATEMENTS_DATA: FinancialStatement[] = [
-    { title: 'القوائم المالية لعام 2024', href: '/assets/docs/القوائم المالية المعتمدة جمعية الباحة الخضراء2024.pdf' },
-    { title: 'القوائم المالية لعام 2023', href: '#' },
-    { title: 'القوائم المالية لعام 2022', href: '#' },
+    { title: 'التقرير المالي للجمعية لعام 2024', href: '/assets/docs/التقرير-المالي-2024.pdf' },
+    { title: 'التقرير المالي لعام 2023', href: '/assets/docs/التقرير-المالي-2023.pdf' },
 ];
 
 export const MEETING_MINUTES_DATA: MeetingMinute[] = [
-    { title: 'محضر اجتماع الجمعية العمومية 2023', href: '#' },
-    { title: 'محضر اجتماع الجمعية العمومية 2022', href: '#' },
+    { title: 'محضر الجمعية العمومية العادية 2024', href: '/assets/docs/محضر-الجمعية-العمومية-العادية-2024.pdf' },
+    { title: 'محضر الجمعية العمومية غير العادية 2024', href: '/assets/docs/محضر-الجمعية-العمومية-غير-العادية-2024.pdf' },
+    { title: 'محضر الجمعية العمومية العادية 1-2025', href: '/assets/docs/محضر-الجمعية-العمومية-العادية-1-2025.pdf' },
+    { title: 'محضر الجمعية العمومية غير العادية 1-2025', href: '/assets/docs/محضر-الجمعية-العمومية-غير-العادية-1-2025.pdf' },
 ];
 
 export const EVALUATION_RESULTS: EvaluationResult[] = [
@@ -178,70 +176,51 @@ export const EVALUATION_RESULTS: EvaluationResult[] = [
 ];
 
 export const GENERAL_ASSEMBLY_MEMBERS: GeneralAssemblyMember[] = [
-    { name: 'عبدالرحمن مساعد عيدان' },
-    { name: 'أحمد محمد سعيد' },
-    { name: 'عبدالكريم محمد عوضه' },
-    { name: 'صالح عيدان صالح' },
-    { name: 'صالح عبدالله حسن' },
-    { name: 'محمد فطيس عبدالله' },
-    { name: 'محمد يحيى علي' },
-    { name: 'فهد يحيى أحمد' },
-    { name: 'خالد مساعد عيدان' },
-    { name: 'عبدالعزيز علي محمد' },
-    { name: 'ضيف الله أحمد ضيف الله' },
-    { name: 'فيصل علي سعود' },
-    { name: 'راشد هاشم محمد' },
-    { name: 'محمد يحيى علي' },
+    { name: 'عضو الجمعية العمومية ١' },
+    { name: 'عضو الجمعية العمومية ٢' },
+    { name: 'عضو الجمعية العمومية ٣' },
+    { name: 'عضو الجمعية العمومية ٤' },
+    { name: 'عضو الجمعية العمومية ٥' },
 ];
 
 export const GOVERNANCE_GUIDES: GovernanceGuide[] = [
-    { title: 'إجراءات التعامل مع المقبوضات', href: '/assets/docs/إجراءات التعامل مع المقبوضات.pdf' },
-    { title: 'إجراءات الوقاية من عمليات غسيل الأموال وجرائم تمويل الإرهاب', href: '/assets/docs/إجراءات الوقاية من عمليات غسيل الأموال وجرائم تمويل الإرهاب.pdf' },
-    { title: 'الميثاق الأخلاقي', href: '/assets/docs/الميثاق الأخلاقي.pdf' },
-    { title: 'آلية التأكد من استحقاق المستفيد', href: '/assets/docs/الية التأكد من استحقاق المستفيد.pdf' },
-    { title: 'دليل السياسات والإجراءات المالية والمحاسبية', href: '/assets/docs/دليل-السياسات-والإجراءات-المالية-والمحاسبية.pdf' },
+    { title: 'إجراءات التعامل مع المقبوضات', href: '#' },
+    { title: 'النموذج الشامل لبيانات الجمعية', href: '/assets/docs/النموذج-الشامل-لبيانات-الجمعية.pdf' },
+    { title: 'لائحة الصرف للبرامج والأنشطة', href: '/assets/docs/لائحة-الصرف-للبرامج-والأنشطة.pdf' },
+    { title: 'سياسة الاستثمار للجمعية', href: '/assets/docs/سياسة-الاستثمار.pdf' },
 ];
 
 export const FORMS_DATA: Form[] = [
-    { title: 'الالتزام بسياسة الشفافية والافصاح', href: '/assets/docs/الالتزام بسياسة الشفافية والافصاح.pdf' },
-    { title: 'النموذج الشامل تحديث 6', href: '/assets/docs/النموذج-الشامل-تحديث-6.pdf' },
-    { title: 'قائمة العلاقات العائلية والتجارية بين أعضاء المجلس والقياديين التنفيذيين والموظفين في الجمعية', href: '/assets/docs/قائمة العلاقات العائلية والتجارية بين أعضاء المجلس والقياديين التنفيذيين والموظفين في الجمعية.pdf' },
-    { title: 'تعهد وإقرار بعدم تعارض المصالح ١', href: '/assets/docs/تعهد وإقرار بعدم تعارض المصالح ١.pdf' },
-    { title: 'تعهد وإقرار بعدم تعارض المصالح ٢', href: '/assets/docs/تعهد وإقرار بعدم تعارض المصالح ٢.pdf' },
-    { title: 'تعهد وإقرار بعدم تعارض المصالح ٣', href: '/assets/docs/تعهد وإقرار بعدم تعارض المصالح ٣.pdf' },
+    { title: 'النموذج الشامل لبيانات الجمعية', href: '/assets/docs/النموذج-الشامل-لبيانات-الجمعية.pdf' },
+    { title: 'نموذج توكيل الأعضاء لحضور اجتماعات الجمعية العمومية', href: '/assets/docs/نموذج-توكيل-الأعضاء.pdf' },
+    { title: 'بيانات المؤسسين وأعضاء الجمعية العمومية', href: '#' },
+    { title: 'توقيعات أعضاء الجمعية العمومية بالاطلاع على اللوائح والأنظمة', href: '#' },
+    { title: 'توقيع مجلس الإدارة بالاطلاع على اللوائح والسياسات', href: '/assets/docs/توقيع-مجلس-الادارة.pdf' },
 ];
 
 export const REGULATIONS_DATA: Regulation[] = [
-    { title: 'اللائحة المختومة من المركز الوطني', href: '/assets/docs/اللائحة المختومة من المركز الوطني.pdf' },
-    { title: 'لائحة إجراءات شراء الأصول', href: '/assets/docs/لائحة إجراءات شراء الاصو.pdf' },
-    { title: 'لائحة المشتريات', href: '/assets/docs/لائحة المشتريات.pdf' },
-    { title: 'لائحة الموارد البشرية', href: '/assets/docs/لايحة الموارد البشرية.pdf' },
+    { title: 'اللائحة الأساسية للجمعية المعتمدة من الوزارة', href: '/assets/docs/اللائحة-الأساسية-للجمعية.pdf' },
+    { title: 'عقد تأسيس الجمعية التعاونية الزراعية بالمندق', href: '/assets/docs/عقد-تأسيس-الجمعية.pdf' },
+    { title: 'لائحة الصرف للبرامج والأنشطة', href: '/assets/docs/لائحة-الصرف-للبرامج-والأنشطة.pdf' },
 ];
 
 export const POLICIES_DATA: PolicyDocument[] = [
-    { title: 'سياسة الصرف للبرامج والأنشطة', href: '/assets/docs/سياسة الصرف للبرامج والأنشطة.pdf' },
-    { title: 'سياسة الإبلاغ عن المخالفات وحماية مقدمي البلاغات', href: '/assets/docs/سياسة  الإبلاغ عن المخالفات  وحماية مقدمي البلاغات.pdf' },
-    { title: 'سياسة إدارة المتطوعين', href: '/assets/docs/سياسة إدارة المتطوعين.pdf' },
-    { title: 'سياسة إدارة المخاطر', href: '/assets/docs/سياسة إدارة المخاطر.pdf' },
-    { title: 'سياسة الاستثمار', href: '/assets/docs/سياسة الاستثمار.pdf' },
-    { title: 'سياسة التعامل مع الشركاء المنفذين والأطراف الثالثة', href: '/assets/docs/سياسة التعامل مع الشركاء المنفذين والأطراف الثالثة.pdf' },
-    { title: 'سياسة تعارض المصالح', href: '/assets/docs/سياسة تعارض المصالح.pdf' },
-    { title: 'سياسة تنظيم العلاقة مع المستفيدين', href: '/assets/docs/سياسة تنظيم العلاقة مع المستفيدين.pdf' },
-    { title: 'سياسة جمع التبرعات', href: '/assets/docs/سياسة جمع التبرعات.pdf' },
-    { title: 'سياسة خصوصية البيانات', href: '/assets/docs/سياسة خصوصية البيانات.pdf' },
-    { title: 'سياسة قواعد السلوك', href: '/assets/docs/سياسة قواعد السلوك.pdf' },
-    { title: 'سياسة مصفوفة الصلاحيات بين مجلس الإدارة والإدارة التنفيذية', href: '/assets/docs/سياسة مصفوفة الصلاحيات بين مجلس الإدارة والإدارة التنفيذية.pdf' },
-    { title: 'سياسة وآليات الرقابة والإشراف على المنظمة وفروعها ومكاتبها وتقييمها', href: '/assets/docs/سياسة وآليات الرقابة الإشراف على المنظمة وفروعها ومكاتبها وتقييمها.pdf' },
+    { title: 'سياسة الاستثمار للجمعية', href: '/assets/docs/سياسة-الاستثمار.pdf' },
+    { title: 'لائحة الصرف للبرامج والأنشطة', href: '/assets/docs/لائحة-الصرف-للبرامج-والأنشطة.pdf' },
+    { title: 'إجراءات التعامل مع المقبوضات', href: '#' },
+    { title: 'اللائحة الأساسية للجمعية', href: '/assets/docs/اللائحة-الأساسية-للجمعية.pdf' },
 ];
 
 export const GENERAL_ASSEMBLY_DOCUMENTS: GovernanceGuide[] = [
-    { title: 'آلية إدارة طلبات العضوية في الجمعية العمومية', href: '/assets/docs/آلية إدارة طلبات العضوية في الجمعية العمومية.pdf' },
-    { title: 'خطاب أعضاء مجلس الإدارة', href: '/assets/docs/خطاب اعضاء مجلس الادارة.pdf' },
+    { title: 'بيانات المؤسسين وأعضاء الجمعية العمومية', href: '#' },
+    { title: 'أعضاء مجلس الإدارة', href: '/assets/docs/مجلس-الإدارة-الجديد.pdf' },
+    { title: 'نموذج توكيل الأعضاء لحضور اجتماعات الجمعية العمومية', href: '/assets/docs/نموذج-توكيل-الأعضاء.pdf' },
+    { title: 'توقيعات أعضاء الجمعية العمومية بالاطلاع على اللوائح', href: '#' },
 ];
 
 export const PLANS_DATA: Plan[] = [
-    { title: 'الخطة الاستراتيجية 2023-2025', href: '#' },
-    { title: 'الخطة التشغيلية لعام 2024', href: '#' },
+    { title: 'عقد تأسيس الجمعية التعاونية الزراعية بالمندق', href: '/assets/docs/عقد-تأسيس-الجمعية.pdf' },
+    { title: 'اللائحة الأساسية للجمعية المعتمدة من الوزارة', href: '/assets/docs/اللائحة-الأساسية-للجمعية.pdf' },
 ];
 
 export const SYSTEMS_DATA: System[] = [
@@ -264,8 +243,8 @@ export const BUDGET_DATA: Budget[] = [
 ];
 
 export const VOLUNTEERING_OPPORTUNITIES: VolunteeringOpportunity[] = [
-    { title: 'متطوع إعلامي', description: 'المشاركة في تغطية فعاليات الجمعية.', status: 'open' },
-    { title: 'متطوع ميداني', description: 'المساعدة في توزيع المساعدات.', status: 'closed' },
+    { title: 'متطوع زراعي ميداني', description: 'المشاركة في مشاريع استصلاح الأراضي والدعم الزراعي.', status: 'open' },
+    { title: 'متطوع إعلامي', description: 'المساعدة في تغطية فعاليات وأنشطة الجمعية.', status: 'open' },
 ];
 
 export const FEEDBACK_FORM_DATA: FeedbackForm[] = [
@@ -277,7 +256,7 @@ export const VOLUNTEERING_CHARTER_DATA: VolunteeringCharter[] = [
 ];
 
 export const BANK_ACCOUNTS: BankAccount[] = [
-    { bankName: 'مصرف الراجحي', accountNumber: '353608010000787', iban: 'SA0880000353608010000787' },
+    { bankName: 'الحساب العام', accountNumber: 'SA5980000353608010999939', iban: 'SA5980000353608010999939' },
 ];
 
 export const TRIAL_BALANCES_DATA: TrialBalance[] = [
@@ -286,8 +265,8 @@ export const TRIAL_BALANCES_DATA: TrialBalance[] = [
 
 export const ACHIEVEMENTS_DATA: Stat[] = [
     { icon: HeartIcon, value: "سيتم الاعلان لاحقا", label: "متطوع" },
-    { icon: LightBulbIcon, value: "سيتم الاعلان لاحقا", label: "برنامج نوعي" },
-    { icon: UsersIcon, value: "سيتم الاعلان لاحقا", label: "مستفيد من البرامج" },
+    { icon: LightBulbIcon, value: "سيتم الاعلان لاحقا", label: "برنامج زراعي" },
+    { icon: UsersIcon, value: "سيتم الاعلان لاحقا", label: "مزارع مستفيد" },
     { icon: CashIcon, value: "سيتم الاعلان لاحقا", label: "ريال قيمة المشاريع" },
 ];
 

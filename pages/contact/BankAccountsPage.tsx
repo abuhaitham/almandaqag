@@ -16,7 +16,7 @@ const BankAccountsPage: React.FC = () => {
                     حساباتنا البنكية
                 </h2>
                 <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-                    يمكنكم دعم برامجنا ومشاريعنا عبر التبرع المباشر لحسابات الجمعية الرسمية.
+                    يمكنكم دعم مشاريع الجمعية الزراعية عبر التحويل المباشر لحسابات الجمعية الرسمية.
                 </p>
             </div>
           <div className="max-w-2xl mx-auto grid md:grid-cols-2 gap-8">

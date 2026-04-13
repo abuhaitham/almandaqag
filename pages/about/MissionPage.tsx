@@ -1,5 +1,6 @@
 
 
+
 import React from 'react';
 // Fix: Corrected import path to be relative from subdirectory.
 import PageHeader from '../../components/PageHeader';
@@ -13,7 +14,7 @@ const MissionPage: React.FC = () => {
           <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
             <h2 className="text-3xl font-extrabold text-primary mb-6 text-center">رسالتنا</h2>
             <p className="text-xl text-gray-700 leading-relaxed text-center">
-              تقديم برامج اجتماعية وتنموية شامله من خلال تمكين المجتمع على تحديد احتياجاته وإيجاد البرامج والمناشط المناسبة له واستثمار طاقات أفراد المجتمع المحلي حسب اهتماماتهم وقدراتهم و رغباتهم.  تحت شعار ( نحو مجتمع متعاون ) .
+              الجمعية التعاونية الزراعية بالمندق تسعى إلى دعم وتطوير القطاع الزراعي في محافظة المندق من خلال تقديم الاستشارات والخدمات الزراعية المتقدمة، وتشجيع الممارسات الزراعية المستدامة، وتوفير الموارد والتقنيات اللازمة للمزارعين، بهدف زيادة الإنتاجية والجودة، والمساهمة في تحقيق التنمية الاقتصادية والاجتماعية المستدامة للمجتمع المحلي.
             </p>
           </div>
         </div>

@@ -18,7 +18,7 @@ const PlansPage: React.FC = () => {
                     الخطط الاستراتيجية والتشغيلية
                 </h2>
                 <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-                    نعمل وفق خطط مدروسة لضمان تحقيق رؤيتنا ورسالتنا بكفاءة وفعالية.
+                    نعمل وفق خطط مدروسة لتحقيق التنمية الزراعية المستدامة بمحافظة المندق.
                 </p>
             </div>
             <ul className="space-y-4">
@@ -28,9 +28,13 @@ const PlansPage: React.FC = () => {
                         <DocumentTextIcon className="w-8 h-8 text-primary ml-4" />
                         <span className="font-semibold text-xl text-gray-800">{plan.title}</span>
                     </div>
-                  <a href={plan.href} target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors">
-                    تحميل
-                  </a>
+                  {plan.href === '#' ? (
+                    <span className="bg-gray-400 text-white font-bold py-2 px-5 rounded-md text-sm">قريبا</span>
+                  ) : (
+                    <a href={plan.href} target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors">
+                      تحميل
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

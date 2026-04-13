@@ -30,13 +30,17 @@ const GeneralAssemblyPage: React.FC = () => {
                       <DocumentTextIcon className="w-8 h-8 text-primary ml-4 flex-shrink-0" />
                       <span className="font-semibold text-xl text-gray-800">{item.title}</span>
                     </div>
-                    <a 
-                      href={item.href} 
-                      download
-                      className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors flex-shrink-0"
-                    >
-                      تحميل
-                    </a>
+                    {item.href === '#' ? (
+                      <span className="bg-gray-400 text-white font-bold py-2 px-5 rounded-md text-sm flex-shrink-0">قريبا</span>
+                    ) : (
+                      <a
+                        href={item.href}
+                        download
+                        className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors flex-shrink-0"
+                      >
+                        تحميل
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -59,13 +63,17 @@ const GeneralAssemblyPage: React.FC = () => {
                       <DocumentTextIcon className="w-8 h-8 text-primary ml-4 flex-shrink-0" />
                       <span className="font-semibold text-xl text-gray-800">{item.title}</span>
                     </div>
-                    <a 
-                      href={item.href} 
-                      download
-                      className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors flex-shrink-0"
-                    >
-                      تحميل
-                    </a>
+                    {item.href === '#' ? (
+                      <span className="bg-gray-400 text-white font-bold py-2 px-5 rounded-md text-sm flex-shrink-0">قريبا</span>
+                    ) : (
+                      <a
+                        href={item.href}
+                        download
+                        className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors flex-shrink-0"
+                      >
+                        تحميل
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

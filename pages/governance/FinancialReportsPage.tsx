@@ -11,11 +11,8 @@ interface FinancialReportsPageProps {
 
 const FinancialReportsPage: React.FC<FinancialReportsPageProps> = () => {
     const reports = [
-        { title: 'الميزانية ربع السنوية الربع الرابع 2023', href: '/assets/docs/financial-reports/الميزانية ربع السنوية الربع الرابع.pdf' },
-        { title: 'الميزانية ربع السنوية الربع الثالث 2023', href: '/assets/docs/financial-reports/الميزانية ربع السنوية الربع الثالث.pdf' },
-        { title: 'الميزانية ربع السنوية الربع الثاني 2023', href: '/assets/docs/financial-reports/الميزانية ربع السنوية الربع الثاني.pdf' },
-        { title: 'الميزانيه ربع السنوية الربع الاول 2023', href: '/assets/docs/financial-reports/الميزانيه ربع السنوية للعام  الربع الاول ٢٠٢٣.pdf' },
-        { title: 'القوائم المالية 2022', href: '/assets/docs/financial-reports/القوائم المالية 2022.pdf' },
+        { title: 'التقرير المالي للجمعية لعام 2024', href: '/assets/docs/التقرير-المالي-2024.pdf' },
+        { title: 'التقرير المالي لعام 2023', href: '/assets/docs/التقرير-المالي-2023.pdf' },
     ];
   return (
     <>
@@ -38,9 +35,13 @@ const FinancialReportsPage: React.FC<FinancialReportsPageProps> = () => {
                         <DocumentTextIcon className="w-8 h-8 text-primary ml-4" />
                         <span className="font-semibold text-xl text-gray-800">{item.title}</span>
                     </div>
-                  <a href={item.href} target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors">
-                    تحميل
-                  </a>
+                  {item.href === '#' ? (
+                    <span className="bg-gray-400 text-white font-bold py-2 px-5 rounded-md text-sm">قريبا</span>
+                  ) : (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors">
+                      تحميل
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

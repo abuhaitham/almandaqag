@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from '../../components/PageHeader';
 
 const ComprehensiveModelPage: React.FC = () => {
-  const comprehensiveModelPdf = '/assets/docs/النموذج-الشامل-تحديث-6.pdf';
+  const comprehensiveModelPdf = '/assets/docs/النموذج-الشامل-لبيانات-الجمعية.pdf';
   
   return (
     <>

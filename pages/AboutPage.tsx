@@ -13,10 +13,10 @@ const AboutPage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md">
             <h2 className="text-3xl font-extrabold text-primary mb-6 text-center">
-              جمعية الدعوة والإرشاد وتوعية الجاليات بالبصر
+              الجمعية التعاونية الزراعية بالمندق
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              جمعية أهلية مسجلة بالمركز الوطني لتنمية القطاع غير الربحي برقم (1234)، تسعى لخدمة المجتمع في مجال الدعوة إلى الله بالحكمة والموعظة الحسنة، وتوعية الجاليات، وتقديم البرامج النافعة التي تساهم في بناء مجتمع حيوي بقيم راسخة.
+              الجمعية التعاونية الزراعية بالمندق.. أنشئت عام ١٤٤٤هـ برقم (١٠١٤٠) لخدمة المزارعين وأصحاب المواشي بالمحافظة عن طريق استصلاح الأراضي الزراعية وعقد الدورات والندوات بهدف خدمة الزراعة وتحسينها.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {BASIC_DATA.map((item) => (

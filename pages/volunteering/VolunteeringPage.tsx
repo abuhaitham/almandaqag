@@ -17,10 +17,10 @@ const VolunteeringPage: React.FC<VolunteeringPageProps> = ({ setCurrentPage }) =
         <div className="container mx-auto px-4">
             <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-primary">
-                    كن جزءاً من فريق الخير
+                    انضم إلى الجمعية الزراعية
                 </h2>
                 <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-                    التطوع قيمة إنسانية عظيمة، ووسيلة للمشاركة المجتمعية الفاعلة. ندعوكم للانضمام إلينا والمساهمة في تحقيق رسالتنا.
+                    ندعوكم للانضمام إلينا والمساهمة في تطوير القطاع الزراعي بمحافظة المندق. يمكنكم التقدم بطلب عضوية عامل أو منتسب في الجمعية العمومية.
                 </p>
                 
                 {/* زر المنصة الوطنية للعمل التطوعي */}

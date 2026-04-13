@@ -13,7 +13,7 @@ const VisionPage: React.FC = () => {
           <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
             <h2 className="text-3xl font-extrabold text-primary mb-6 text-center">رؤيتنا</h2>
             <p className="text-xl text-gray-700 leading-relaxed text-center">
-              التميز في تحقيق التنمية الشاملة لمجتمع حيوي، مترابط طموح وفق رؤية المملكة 2030
+              أن تكون الجمعية التعاونية الزراعية بالمندق رائدة في تحقيق التنمية الزراعية المستدامة بمحافظة المندق، من خلال تعزيز الابتكار، وتحسين جودة المحاصيل، ودعم المزارعين بالتقنيات الحديثة، بما يساهم في تحسين مستوى المعيشة وتحقيق الأمن الغذائي للمنطقة.
             </p>
           </div>
         </div>
