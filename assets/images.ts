@@ -10,7 +10,7 @@ import NEWS_IMAGE_1 from './img/forest-scene.jpg';
 import NEWS_IMAGE_2 from './img/farm-landscape.jpg';
 import NEWS_IMAGE_3 from './img/policies.jpg';
 
-import ABOUT_IMAGE from './img/about-goals.png';
+import ABOUT_IMAGE from './img/about-goals.jpg';
 import LOGO_IMAGE from './img/WhatsApp_Image_2024-04-29_at_8.27.53_AM_2_-removebg-preview-218x218x0x26x218x164x1714802062.png';
 import STRUCTURE_IMAGE from './img/org-structure.jpeg';
 
