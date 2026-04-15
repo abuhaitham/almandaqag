@@ -122,9 +122,9 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-center">مميزات المساهمين</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {memberBenefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3 bg-white bg-opacity-10 p-5 rounded-lg">
+                <div key={index} className="flex items-start gap-3 bg-white/10 p-5 rounded-lg">
                   <CheckIcon className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                  <span className="text-lg">{benefit}</span>
+                  <span className="text-lg text-white">{benefit}</span>
                 </div>
               ))}
             </div>
