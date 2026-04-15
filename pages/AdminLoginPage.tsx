@@ -38,8 +38,8 @@ const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ setCurrentPage, onLogin
             </div>
 
             {error && (
-              <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
-                {error}
+              <div className="mb-4 p-4 rounded-lg text-center" style={{ backgroundColor: '#fee2e2', border: '2px solid #ef4444', color: '#b91c1c' }}>
+                <p className="font-bold text-lg">⚠ {error}</p>
               </div>
             )}
 
