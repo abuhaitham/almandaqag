@@ -33,7 +33,13 @@
       "Bash(powershell.exe -Command \"Get-ChildItem -Filter '*.pdf' | Select-Object Name, Length | Format-Table -AutoSize\")",
       "Bash(python3 -c \"import os; [print\\(f'{os.path.getsize\\(f\\):>10} {f}'\\) for f in sorted\\(os.listdir\\('.'\\)\\) if f.endswith\\('.pdf'\\)]\")",
       "Bash(python -c \"import os; [print\\(f'{os.path.getsize\\(f\\):>10} {f}'\\) for f in sorted\\(os.listdir\\('.'\\)\\) if f.endswith\\('.pdf'\\)]\")",
-      "Bash(npx vite:*)"
+      "Bash(npx vite:*)",
+      "Bash(npx tsc:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "Bash(gh api:*)",
+      "Bash(npx supabase:*)"
     ]
   }
 }
