@@ -148,7 +148,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <a href="#" onClick={(e) => handleNavClick(e, 'home')} className="flex items-center gap-2 text-primary no-underline min-w-0">
+          <a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'home')} className="flex items-center gap-2 text-primary no-underline min-w-0">
             <img src={LOGO_IMAGE} alt="شعار الجمعية التعاونية الزراعية بالمندق" className="h-10 md:h-12 w-auto flex-shrink-0" />
             <span className="text-sm md:text-xl font-extrabold leading-tight truncate">الجمعية الزراعية بالمندق</span>
           </a>

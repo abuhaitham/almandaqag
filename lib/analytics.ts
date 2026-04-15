@@ -22,7 +22,7 @@ export const trackPageVisit = async (page: string): Promise<void> => {
     const visitData: Omit<WebsiteVisit, 'id' | 'created_at'> = {
       page,
       user_agent: navigator.userAgent,
-      ip_address: '', // Will be filled by the backend
+      ip_address: '',
       referrer: document.referrer || null,
       session_id: getSessionId()
     };
@@ -32,10 +32,10 @@ export const trackPageVisit = async (page: string): Promise<void> => {
       .insert([visitData]);
 
     if (error) {
-      console.error('Error tracking visit:', error);
+      console.warn('Analytics tracking failed (check RLS policy for website_visits table):', error.message);
     }
   } catch (err) {
-    console.error('Error tracking visit:', err);
+    console.warn('Analytics tracking error:', err);
   }
 };
 

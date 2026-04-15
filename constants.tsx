@@ -64,48 +64,48 @@ const HandshakeIcon: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 export const NAV_LINKS: NavLink[] = [
-    { label: 'الرئيسية', href: '#', id: 'home' },
+    { label: 'الرئيسية', href: 'javascript:void(0)', id: 'home' },
     {
-        label: 'عن الجمعية', href: '#', id: 'about',
+        label: 'عن الجمعية', href: 'javascript:void(0)', id: 'about',
         subLinks: [
-            { label: 'من نحن', href: '#', id: 'about' },
-            { label: 'الرؤية', href: '#', id: 'vision' },
-            { label: 'الرسالة', href: '#', id: 'mission' },
-            { label: 'الأهداف', href: '#', id: 'goals' },
-            { label: 'شهادة التسجيل', href: '#', id: 'certificate' },
-            { label: 'الجمعية العمومية', href: '#', id: 'generalAssembly' },
-            { label: 'النموذج الشامل للجمعيات', href: '#', id: 'comprehensiveModel' },
-            { label: 'المدير التنفيذي', href: '#', id: 'executiveDirector' },
-            { label: 'الهيكل التنظيمي', href: '#', id: 'structure' },
-            { label: 'مجلس الإدارة', href: '#', id: 'board' },
-            { label: 'شركاؤنا', href: '#', id: 'partnersPage' },
-            { label: 'مشاريعنا', href: '#', id: 'projects' },
-            { label: 'الحسابات البنكية', href: '#', id: 'bankAccounts' },
+            { label: 'من نحن', href: 'javascript:void(0)', id: 'about' },
+            { label: 'الرؤية', href: 'javascript:void(0)', id: 'vision' },
+            { label: 'الرسالة', href: 'javascript:void(0)', id: 'mission' },
+            { label: 'الأهداف', href: 'javascript:void(0)', id: 'goals' },
+            { label: 'شهادة التسجيل', href: 'javascript:void(0)', id: 'certificate' },
+            { label: 'الجمعية العمومية', href: 'javascript:void(0)', id: 'generalAssembly' },
+            { label: 'النموذج الشامل للجمعيات', href: 'javascript:void(0)', id: 'comprehensiveModel' },
+            { label: 'المدير التنفيذي', href: 'javascript:void(0)', id: 'executiveDirector' },
+            { label: 'الهيكل التنظيمي', href: 'javascript:void(0)', id: 'structure' },
+            { label: 'مجلس الإدارة', href: 'javascript:void(0)', id: 'board' },
+            { label: 'شركاؤنا', href: 'javascript:void(0)', id: 'partnersPage' },
+            { label: 'مشاريعنا', href: 'javascript:void(0)', id: 'projects' },
+            { label: 'الحسابات البنكية', href: 'javascript:void(0)', id: 'bankAccounts' },
         ]
     },
     {
-        label: 'الحوكمة', href: '#', id: 'governance',
+        label: 'الحوكمة', href: 'javascript:void(0)', id: 'governance',
         subLinks: [
-            { label: 'وثائق الحوكمة', href: '#', id: 'governanceGuides' },
-            { label: 'التقارير المالية', href: '#', id: 'financialReports' },
+            { label: 'وثائق الحوكمة', href: 'javascript:void(0)', id: 'governanceGuides' },
+            { label: 'التقارير المالية', href: 'javascript:void(0)', id: 'financialReports' },
         ]
     },
-    { label: 'التقارير', href: '#', id: 'reports' },
-    { label: 'المشاريع والأوقاف', href: '#', id: 'projects' },
-    { label: 'التطوع', href: '#', id: 'volunteering' },
-    { label: 'المركز الإعلامي', href: '#', id: 'news' },
+    { label: 'التقارير', href: 'javascript:void(0)', id: 'reports' },
+    { label: 'المشاريع والأوقاف', href: 'javascript:void(0)', id: 'projects' },
+    { label: 'التطوع', href: 'javascript:void(0)', id: 'volunteering' },
+    { label: 'المركز الإعلامي', href: 'javascript:void(0)', id: 'news' },
     {
-        label: 'قياس رضا أصحاب العلاقة', href: '#', id: 'satisfaction',
+        label: 'قياس رضا أصحاب العلاقة', href: 'javascript:void(0)', id: 'satisfaction',
         subLinks: [
-            { label: 'استبيان الرضا', href: '#', id: 'satisfactionSurvey' },
-            { label: 'نتائج الرضا', href: '#', id: 'satisfactionResults' },
+            { label: 'استبيان الرضا', href: 'javascript:void(0)', id: 'satisfactionSurvey' },
+            { label: 'نتائج الرضا', href: 'javascript:void(0)', id: 'satisfactionResults' },
         ]
     },
     {
-        label: 'تواصل معنا', href: '#', id: 'contact',
+        label: 'تواصل معنا', href: 'javascript:void(0)', id: 'contact',
         subLinks: [
-            { label: 'معلومات التواصل', href: '#', id: 'contact' },
-            { label: 'شكوى / اقتراح', href: '#', id: 'feedbackForm' },
+            { label: 'معلومات التواصل', href: 'javascript:void(0)', id: 'contact' },
+            { label: 'شكوى / اقتراح', href: 'javascript:void(0)', id: 'feedbackForm' },
         ]
     }
 ];
@@ -156,7 +156,8 @@ export const BOARD_MEMBERS: BoardMember[] = [
 ];
 
 export const ANNUAL_REPORTS_DATA: AnnualReport[] = [
-    // لا توجد تقارير سنوية حالياً - جمعية ناشئة
+    { title: 'التقرير المالي للجمعية لعام 2024', href: '/docs/التقرير-المالي-2024.pdf' },
+    { title: 'التقرير المالي لعام 2023', href: '/docs/التقرير-المالي-2023.pdf' },
 ];
 
 export const FINANCIAL_STATEMENTS_DATA: FinancialStatement[] = [
@@ -184,7 +185,7 @@ export const GENERAL_ASSEMBLY_MEMBERS: GeneralAssemblyMember[] = [
 ];
 
 export const GOVERNANCE_GUIDES: GovernanceGuide[] = [
-    { title: 'إجراءات التعامل مع المقبوضات', href: '#' },
+    { title: 'إجراءات التعامل مع المقبوضات', href: 'javascript:void(0)' },
     { title: 'النموذج الشامل لبيانات الجمعية', href: '/docs/النموذج-الشامل-لبيانات-الجمعية.pdf' },
     { title: 'لائحة الصرف للبرامج والأنشطة', href: '/docs/لائحة-الصرف-للبرامج-والأنشطة.pdf' },
     { title: 'سياسة الاستثمار للجمعية', href: '/docs/سياسة-الاستثمار.pdf' },
@@ -193,8 +194,8 @@ export const GOVERNANCE_GUIDES: GovernanceGuide[] = [
 export const FORMS_DATA: Form[] = [
     { title: 'النموذج الشامل لبيانات الجمعية', href: '/docs/النموذج-الشامل-لبيانات-الجمعية.pdf' },
     { title: 'نموذج توكيل الأعضاء لحضور اجتماعات الجمعية العمومية', href: '/docs/نموذج-توكيل-الأعضاء.pdf' },
-    { title: 'بيانات المؤسسين وأعضاء الجمعية العمومية', href: '#' },
-    { title: 'توقيعات أعضاء الجمعية العمومية بالاطلاع على اللوائح والأنظمة', href: '#' },
+    { title: 'بيانات المؤسسين وأعضاء الجمعية العمومية', href: 'javascript:void(0)' },
+    { title: 'توقيعات أعضاء الجمعية العمومية بالاطلاع على اللوائح والأنظمة', href: 'javascript:void(0)' },
     { title: 'توقيع مجلس الإدارة بالاطلاع على اللوائح والسياسات', href: '/docs/توقيع-مجلس-الادارة.pdf' },
 ];
 
@@ -207,15 +208,15 @@ export const REGULATIONS_DATA: Regulation[] = [
 export const POLICIES_DATA: PolicyDocument[] = [
     { title: 'سياسة الاستثمار للجمعية', href: '/docs/سياسة-الاستثمار.pdf' },
     { title: 'لائحة الصرف للبرامج والأنشطة', href: '/docs/لائحة-الصرف-للبرامج-والأنشطة.pdf' },
-    { title: 'إجراءات التعامل مع المقبوضات', href: '#' },
+    { title: 'إجراءات التعامل مع المقبوضات', href: 'javascript:void(0)' },
     { title: 'اللائحة الأساسية للجمعية', href: '/docs/اللائحة-الأساسية-للجمعية.pdf' },
 ];
 
 export const GENERAL_ASSEMBLY_DOCUMENTS: GovernanceGuide[] = [
-    { title: 'بيانات المؤسسين وأعضاء الجمعية العمومية', href: '#' },
+    { title: 'بيانات المؤسسين وأعضاء الجمعية العمومية', href: 'javascript:void(0)' },
     { title: 'أعضاء مجلس الإدارة', href: '/docs/مجلس-الإدارة-الجديد.pdf' },
     { title: 'نموذج توكيل الأعضاء لحضور اجتماعات الجمعية العمومية', href: '/docs/نموذج-توكيل-الأعضاء.pdf' },
-    { title: 'توقيعات أعضاء الجمعية العمومية بالاطلاع على اللوائح', href: '#' },
+    { title: 'توقيعات أعضاء الجمعية العمومية بالاطلاع على اللوائح', href: 'javascript:void(0)' },
 ];
 
 export const PLANS_DATA: Plan[] = [
@@ -224,22 +225,22 @@ export const PLANS_DATA: Plan[] = [
 ];
 
 export const SYSTEMS_DATA: System[] = [
-    { title: 'نظام الجمعيات والمؤسسات الأهلية', href: '#' },
-    { title: 'نظام العمل التطوعي', href: '#' },
+    { title: 'نظام الجمعيات والمؤسسات الأهلية', href: 'javascript:void(0)' },
+    { title: 'نظام العمل التطوعي', href: 'javascript:void(0)' },
 ];
 
 export const COMMITTEES_DATA: Committee[] = [
-    { title: 'لجنة المراجعة الداخلية', href: '#' },
-    { title: 'لجنة الترشيحات والمكافآت', href: '#' },
+    { title: 'لجنة المراجعة الداخلية', href: 'javascript:void(0)' },
+    { title: 'لجنة الترشيحات والمكافآت', href: 'javascript:void(0)' },
 ];
 
 export const QUARTERLY_REPORTS_DATA: QuarterlyReport[] = [
-    { title: 'التقرير المالي للربع الثالث 2023', href: '#' },
-    { title: 'التقرير المالي للربع الثاني 2023', href: '#' },
+    { title: 'التقرير المالي للربع الثالث 2023', href: 'javascript:void(0)' },
+    { title: 'التقرير المالي للربع الثاني 2023', href: 'javascript:void(0)' },
 ];
 
 export const BUDGET_DATA: Budget[] = [
-    { title: 'الموازنة التقديرية لعام 2024', href: '#' },
+    { title: 'الموازنة التقديرية لعام 2024', href: 'javascript:void(0)' },
 ];
 
 export const VOLUNTEERING_OPPORTUNITIES: VolunteeringOpportunity[] = [
@@ -248,11 +249,11 @@ export const VOLUNTEERING_OPPORTUNITIES: VolunteeringOpportunity[] = [
 ];
 
 export const FEEDBACK_FORM_DATA: FeedbackForm[] = [
-    { title: 'نموذج الشكاوى والمقترحات', href: '#' },
+    { title: 'نموذج الشكاوى والمقترحات', href: 'javascript:void(0)' },
 ];
 
 export const VOLUNTEERING_CHARTER_DATA: VolunteeringCharter[] = [
-    { title: 'تحميل ميثاق العمل التطوعي', href: '#' },
+    { title: 'تحميل ميثاق العمل التطوعي', href: 'javascript:void(0)' },
 ];
 
 export const BANK_ACCOUNTS: BankAccount[] = [
@@ -260,7 +261,7 @@ export const BANK_ACCOUNTS: BankAccount[] = [
 ];
 
 export const TRIAL_BALANCES_DATA: TrialBalance[] = [
-    { title: 'ميزان المراجعة - الربع الثالث 2023', href: '#' },
+    { title: 'ميزان المراجعة - الربع الثالث 2023', href: 'javascript:void(0)' },
 ];
 
 export const ACHIEVEMENTS_DATA: Stat[] = [

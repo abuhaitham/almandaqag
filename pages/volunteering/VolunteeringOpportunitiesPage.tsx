@@ -38,7 +38,7 @@ const VolunteeringOpportunitiesPage: React.FC = () => {
                   </div>
                   {opportunity.status === 'open' && (
                     <div className="mt-4 text-left">
-                        <a href="#" className="bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors">
+                        <a href="javascript:void(0)" className="bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors">
                             سجل الآن
                         </a>
                     </div>

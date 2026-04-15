@@ -19,7 +19,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* About */}
           <div className="md:col-span-2 lg:col-span-1">
-             <a href="#" onClick={(e) => handleNavClick(e, 'home')} className="mb-4 block">
+             <a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'home')} className="mb-4 block">
                <span className="inline-flex items-center gap-3 text-white">
                  <img src={LOGO_IMAGE} alt="شعار الجمعية" className="h-14 w-auto bg-white rounded-lg p-1" />
                  <span className="text-xl font-extrabold">الجمعية الزراعية بالمندق</span>
@@ -34,13 +34,13 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
           <div>
             <h4 className="text-lg font-bold text-white mb-4">روابط سريعة</h4>
             <ul className="space-y-2">
-              <li><a href="#" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-secondary transition-colors">عن الجمعية</a></li>
-              <li><a href="#" onClick={(e) => handleNavClick(e, 'projects')} className="hover:text-secondary transition-colors">مشاريعنا</a></li>
-              <li><a href="#" onClick={(e) => handleNavClick(e, 'governance')} className="hover:text-secondary transition-colors">الحوكمة</a></li>
-              <li><a href="#" onClick={(e) => handleNavClick(e, 'volunteering')} className="hover:text-secondary transition-colors">التطوع</a></li>
-              <li><a href="#" onClick={(e) => handleNavClick(e, 'contact')} className="hover:text-secondary transition-colors">اتصل بنا</a></li>
-              <li><a href="#" onClick={(e) => handleNavClick(e, 'feedbackForm')} className="hover:text-secondary transition-colors">الشكاوى والمقترحات</a></li>
-              <li><a href="#" onClick={(e) => handleNavClick(e, 'satisfactionSurvey')} className="hover:text-secondary transition-colors">قياس الرضا</a></li>
+              <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-secondary transition-colors">عن الجمعية</a></li>
+              <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'projects')} className="hover:text-secondary transition-colors">مشاريعنا</a></li>
+              <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'governance')} className="hover:text-secondary transition-colors">الحوكمة</a></li>
+              <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'volunteering')} className="hover:text-secondary transition-colors">التطوع</a></li>
+              <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'contact')} className="hover:text-secondary transition-colors">اتصل بنا</a></li>
+              <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'feedbackForm')} className="hover:text-secondary transition-colors">الشكاوى والمقترحات</a></li>
+              <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'satisfactionSurvey')} className="hover:text-secondary transition-colors">قياس الرضا</a></li>
             </ul>
           </div>
 
@@ -65,7 +65,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
           {/* Admin Login */}
           <div>
             <h4 className="text-lg font-bold text-white mb-4">الإدارة</h4>
-            <a href="#" onClick={(e) => handleNavClick(e, 'adminLogin')} className="inline-block bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-6 rounded-md transition-colors">
+            <a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'adminLogin')} className="inline-block bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-6 rounded-md transition-colors">
               دخول
             </a>
           </div>

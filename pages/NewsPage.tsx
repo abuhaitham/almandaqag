@@ -29,7 +29,7 @@ const NewsPage: React.FC = () => {
                 <div className="p-6 flex flex-col flex-grow">
                   <p className="text-sm text-gray-500 mb-2">{article.date}</p>
                   <h3 className="text-lg font-bold text-primary mb-4 flex-grow">{article.title}</h3>
-                  <a href="#" className="text-secondary font-semibold hover:underline mt-auto">
+                  <a href="javascript:void(0)" className="text-secondary font-semibold hover:underline mt-auto">
                     قراءة المزيد
                   </a>
                 </div>
