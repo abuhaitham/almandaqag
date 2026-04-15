@@ -53,6 +53,7 @@ import SatisfactionResultsPage from './pages/SatisfactionResultsPage';
 import AdminLoginPage from './pages/AdminLoginPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import AnalyticsPage from './pages/AnalyticsPage';
+import { trackPageVisit } from './lib/analytics';
 
 export type Page = string;
 
@@ -66,6 +67,11 @@ function App() {
     setIsAdmin(adminStatus === 'true');
 
     window.scrollTo(0, 0);
+
+    // Track page visit for analytics (exclude admin pages)
+    if (!currentPage.startsWith('admin') && currentPage !== 'analytics') {
+      trackPageVisit(currentPage);
+    }
   }, [currentPage]);
 
   const handleLogin = () => {

@@ -365,7 +365,7 @@ const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ setCurrentPage,
                   : 'text-gray-600 hover:text-primary'
               }`}
             >
-              ✉️ الرسائل ({messageStats.total})
+              ✉️ الرسائل
               {messageStats.unread > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {messageStats.unread}
@@ -380,7 +380,7 @@ const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ setCurrentPage,
                   : 'text-gray-600 hover:text-primary'
               }`}
             >
-              📋 الشكاوى والمقترحات ({complaintStats.total})
+              📋 الشكاوى والمقترحات
               {complaintStats.new > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {complaintStats.new}
@@ -442,14 +442,14 @@ const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ setCurrentPage,
               <table className="w-full">
                 <thead className="bg-primary text-white">
                   <tr>
-                    <th className="px-4 py-3 text-right">#</th>
-                    <th className="px-4 py-3 text-right">التاريخ</th>
-                    <th className="px-4 py-3 text-right">مستوى الرضا</th>
-                    <th className="px-4 py-3 text-right">سهولة الوصول</th>
-                    <th className="px-4 py-3 text-right">تقييم الفريق</th>
-                    <th className="px-4 py-3 text-right">تلبية الاحتياجات</th>
-                    <th className="px-4 py-3 text-right">التوصية</th>
-                    <th className="px-4 py-3 text-right">تفاصيل</th>
+                    <th className="px-2 py-3 text-right">#</th>
+                    <th className="px-2 py-3 text-right">التاريخ</th>
+                    <th className="px-2 py-3 text-right">مستوى الرضا</th>
+                    <th className="px-2 py-3 text-right hidden md:table-cell">سهولة الوصول</th>
+                    <th className="px-2 py-3 text-right hidden md:table-cell">تقييم الفريق</th>
+                    <th className="px-2 py-3 text-right">تلبية الاحتياجات</th>
+                    <th className="px-2 py-3 text-right">التوصية</th>
+                    <th className="px-2 py-3 text-right">تفاصيل</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -462,10 +462,10 @@ const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ setCurrentPage,
                   ) : (
                     surveys.map((survey, index) => (
                       <tr key={survey.id} className="hover:bg-gray-50">
-                        <td className="px-4 py-3">{index + 1}</td>
-                        <td className="px-4 py-3 text-sm">{formatDate(survey.created_at)}</td>
-                        <td className="px-4 py-3">
-                          <span className={`px-2 py-1 rounded text-sm ${
+                        <td className="px-2 py-3">{index + 1}</td>
+                        <td className="px-2 py-3 text-xs whitespace-nowrap">{formatDate(survey.created_at)}</td>
+                        <td className="px-2 py-3">
+                          <span className={`px-2 py-1 rounded text-xs whitespace-nowrap ${
                             survey.satisfaction === 'راضٍ جداً' ? 'bg-green-100 text-green-800' :
                             survey.satisfaction === 'راضٍ' ? 'bg-blue-100 text-blue-800' :
                             survey.satisfaction === 'محايد' ? 'bg-yellow-100 text-yellow-800' :
@@ -474,11 +474,11 @@ const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ setCurrentPage,
                             {survey.satisfaction}
                           </span>
                         </td>
-                        <td className="px-4 py-3 text-sm">{survey.accessibility}</td>
-                        <td className="px-4 py-3 text-sm">{survey.team_work}</td>
-                        <td className="px-4 py-3 text-sm">{survey.needs_met}</td>
-                        <td className="px-4 py-3 text-sm">{survey.recommend}</td>
-                        <td className="px-4 py-3">
+                        <td className="px-2 py-3 text-xs hidden md:table-cell">{survey.accessibility}</td>
+                        <td className="px-2 py-3 text-xs hidden md:table-cell">{survey.team_work}</td>
+                        <td className="px-2 py-3 text-xs">{survey.needs_met}</td>
+                        <td className="px-2 py-3 text-xs">{survey.recommend}</td>
+                        <td className="px-2 py-3">
                           <button
                             onClick={() => {
                               const details = `
