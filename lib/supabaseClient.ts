@@ -7,4 +7,8 @@ if (!supabaseUrl || !supabaseAnonKey) {
   console.warn("Supabase URL and Key are not configured. Some features may not work.");
 }
 
-export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '')
+// Use a placeholder URL when not configured to prevent createClient from crashing
+export const supabase = createClient(
+  supabaseUrl || 'https://placeholder.supabase.co',
+  supabaseAnonKey || 'placeholder-key'
+)
