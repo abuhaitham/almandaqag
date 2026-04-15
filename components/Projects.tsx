@@ -15,7 +15,7 @@ const Projects: React.FC<ProjectsProps> = ({ setCurrentPage }) => {
             مشاريعنا
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            سيتم الإعلان عن مشاريعنا قريبًا. (TBD)
+            تسعى الجمعية لتنفيذ مشاريع زراعية تنموية تخدم أهالي المندق والمنطقة
           </p>
         </div>
       </div>

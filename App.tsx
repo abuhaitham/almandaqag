@@ -61,10 +61,28 @@ function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const [isAdmin, setIsAdmin] = useState(false);
 
+  const SESSION_TIMEOUT_MS = 30 * 60 * 1000; // 30 minutes
+
   useEffect(() => {
     // Check if user is already logged in as admin
     const adminStatus = localStorage.getItem('isAdmin');
-    setIsAdmin(adminStatus === 'true');
+    const loginTime = localStorage.getItem('adminLoginTime');
+
+    if (adminStatus === 'true' && loginTime) {
+      const elapsed = Date.now() - parseInt(loginTime, 10);
+      if (elapsed > SESSION_TIMEOUT_MS) {
+        // Session expired
+        localStorage.removeItem('isAdmin');
+        localStorage.removeItem('adminLoginTime');
+        setIsAdmin(false);
+      } else {
+        setIsAdmin(true);
+      }
+    } else if (adminStatus === 'true') {
+      // Legacy login without timestamp — clear it
+      localStorage.removeItem('isAdmin');
+      setIsAdmin(false);
+    }
 
     window.scrollTo(0, 0);
 
@@ -79,6 +97,8 @@ function App() {
   };
 
   const handleLogout = () => {
+    localStorage.removeItem('isAdmin');
+    localStorage.removeItem('adminLoginTime');
     setIsAdmin(false);
   };
 

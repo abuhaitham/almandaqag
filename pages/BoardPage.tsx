@@ -4,8 +4,8 @@ import { DocumentTextIcon } from '../constants';
 
 const BoardPage: React.FC = () => {
   const documents = [
-    { title: 'أعضاء مجلس الإدارة', href: '/assets/docs/مجلس-الإدارة-الجديد.pdf' },
-    { title: 'توقيع مجلس الإدارة بالاطلاع على اللوائح والسياسات', href: '/assets/docs/توقيع-مجلس-الادارة.pdf' },
+    { title: 'أعضاء مجلس الإدارة', href: '/docs/مجلس-الإدارة-الجديد.pdf' },
+    { title: 'توقيع مجلس الإدارة بالاطلاع على اللوائح والسياسات', href: '/docs/توقيع-مجلس-الادارة.pdf' },
   ];
 
   return (

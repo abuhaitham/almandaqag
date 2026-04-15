@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from '../../components/PageHeader';
 
 const CertificatePage: React.FC = () => {
-  const certificatePDF = '/assets/docs/شهادة-التسجيل-الجمعية-الزراعية-بالمندق.pdf';
+  const certificatePDF = '/docs/شهادة-التسجيل-الجمعية-الزراعية-بالمندق.pdf';
   
   return (
     <>
