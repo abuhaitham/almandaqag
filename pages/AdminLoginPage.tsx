@@ -16,7 +16,7 @@ const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ setCurrentPage, onLogin
     e.preventDefault();
     
     // Simple authentication - in production, use proper authentication
-    if (username === 'admin' && password === 'admin123') {
+    if (username === 'aaz5555@yahoo.com' && password === 'Mandq@1234') {
       localStorage.setItem('isAdmin', 'true');
       localStorage.setItem('adminLoginTime', Date.now().toString());
       onLogin();

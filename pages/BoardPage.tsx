@@ -8,6 +8,13 @@ const BoardPage: React.FC = () => {
     { title: 'توقيع مجلس الإدارة بالاطلاع على اللوائح والسياسات', href: '/docs/توقيع-مجلس-الادارة.pdf' },
   ];
 
+  const boardMinutes = [
+    { title: 'محضر اجتماع مجلس الإدارة الأول 2024', href: '/docs/محضر-مجلس-الادارة-1-2024.pdf' },
+    { title: 'محضر اجتماع مجلس الإدارة الثاني 2024', href: '/docs/محضر-مجلس-الادارة-2-2024.pdf' },
+    { title: 'محضر اجتماع مجلس الإدارة الثالث 2024', href: '/docs/محضر-مجلس-الادارة-3-2024.pdf' },
+    { title: 'محضر اجتماع مجلس الإدارة الرابع 2024', href: '/docs/محضر-مجلس-الادارة-4-2024.pdf' },
+  ];
+
   return (
     <>
       <PageHeader title="مجلس الإدارة" breadcrumb="عن الجمعية / مجلس الإدارة" />
@@ -24,6 +31,34 @@ const BoardPage: React.FC = () => {
             </div>
             <ul className="space-y-4">
               {documents.map((item, index) => (
+                <li key={index} className="bg-white border-r-4 border-primary rounded-lg p-6 flex justify-between items-center shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex items-center flex-1">
+                    <DocumentTextIcon className="w-8 h-8 text-primary ml-4 flex-shrink-0" />
+                    <span className="font-semibold text-lg text-gray-800">{item.title}</span>
+                  </div>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-5 rounded-md text-sm transition-colors flex-shrink-0"
+                  >
+                    تحميل
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            {/* محاضر مجلس الإدارة */}
+            <div className="text-center mt-16 mb-12">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-primary">
+                محاضر مجلس الإدارة
+              </h2>
+              <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+                محاضر اجتماعات مجلس الإدارة للأعوام السابقة.
+              </p>
+            </div>
+            <ul className="space-y-4">
+              {boardMinutes.map((item, index) => (
                 <li key={index} className="bg-white border-r-4 border-primary rounded-lg p-6 flex justify-between items-center shadow-sm hover:shadow-md transition-shadow">
                   <div className="flex items-center flex-1">
                     <DocumentTextIcon className="w-8 h-8 text-primary ml-4 flex-shrink-0" />
