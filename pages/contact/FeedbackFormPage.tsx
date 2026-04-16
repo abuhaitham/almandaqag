@@ -290,8 +290,8 @@ const FeedbackFormPage: React.FC = () => {
             <div className="mt-8 bg-gradient-to-r from-primary to-primary-dark text-white p-6 rounded-lg shadow-lg">
               <h3 className="text-xl font-bold mb-3">طرق التواصل الأخرى</h3>
               <div className="space-y-2 text-white/90">
-                <p>البريد الإلكتروني: info@almandaqag.org.sa</p>
-                <p>الهاتف: 0503774124</p>
+                <p>البريد الإلكتروني: Mandq.farmer@hotmail.com</p>
+                <p>الهاتف: 0505677925</p>
                 <p>أوقات العمل: الأحد - الخميس (8:00 ص - 4:00 م)</p>
               </div>
             </div>

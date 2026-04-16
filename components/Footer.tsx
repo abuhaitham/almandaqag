@@ -49,8 +49,8 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
             <h4 className="text-lg font-bold text-white mb-4">اتصل بنا</h4>
             <ul className="space-y-2 text-gray-400">
               <li>العنوان: المندق، منطقة الباحة، المملكة العربية السعودية</li>
-              <li>الهاتف: 0503774124</li>
-              <li>البريد: info@almandaqag.org.sa</li>
+              <li>الهاتف: 0505677925</li>
+              <li>البريد: Mandq.farmer@hotmail.com</li>
             </ul>
             <div className="mt-4">
               <h4 className="text-lg font-bold text-white mb-2">تابعنا</h4>

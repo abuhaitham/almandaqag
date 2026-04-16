@@ -21,10 +21,10 @@ const ExecutiveDirectorPage: React.FC = () => {
               <p className="text-2xl font-bold text-gray-800 mb-4">المدير التنفيذي</p>
               <div className="space-y-2">
                 <p className="text-lg text-gray-700">
-                  <strong>الجوال:</strong> <a href="tel:0503774124" className="hover:text-secondary">0503774124</a>
+                  <strong>الجوال:</strong> <a href="tel:0505677925" className="hover:text-secondary">0505677925</a>
                 </p>
                 <p className="text-lg text-gray-700">
-                  <strong>البريد الإلكتروني:</strong> <a href="mailto:info@almandaqag.org.sa" className="hover:text-secondary">info@almandaqag.org.sa</a>
+                  <strong>البريد الإلكتروني:</strong> <a href="mailto:Mandq.farmer@hotmail.com" className="hover:text-secondary">Mandq.farmer@hotmail.com</a>
                 </p>
               </div>
             </div>

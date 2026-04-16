@@ -143,8 +143,8 @@ export const BASIC_DATA: BasicDataItem[] = [
     { label: 'رقم التسجيل', value: '10140' },
     { label: 'تاريخ التأسيس', value: '1444 هـ' },
     { label: 'المدينة', value: 'المندق' },
-    { label: 'البريد الإلكتروني', value: 'info@almandaqag.org.sa' },
-    { label: 'رقم الهاتف', value: '0503774124' },
+    { label: 'البريد الإلكتروني', value: 'Mandq.farmer@hotmail.com' },
+    { label: 'رقم الهاتف', value: '0505677925' },
 ];
 
 export const BOARD_MEMBERS: BoardMember[] = [
