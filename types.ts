@@ -50,7 +50,6 @@ export type Regulation = DocumentLink;
 export type Committee = DocumentLink;
 export type QuarterlyReport = DocumentLink;
 export type Budget = DocumentLink;
-export type VolunteeringCharter = DocumentLink;
 export type FinancialRegulation = DocumentLink;
 export type FeedbackForm = DocumentLink;
 export type Form = DocumentLink;
@@ -72,11 +71,6 @@ export interface GeneralAssemblyMember {
     name: string;
 }
 
-export interface VolunteeringOpportunity {
-    title: string;
-    description: string;
-    status: 'open' | 'closed';
-}
 
 export interface BankAccount {
     bankName: string;

@@ -40,18 +40,13 @@ const CommitteesPage = lazy(() => import('./pages/governance/CommitteesPage'));
 const GeneralAssemblyGovPage = lazy(() => import('./pages/governance/GeneralAssemblyPage'));
 const QuarterlyReportsPage = lazy(() => import('./pages/governance/QuarterlyReportsPage'));
 const BudgetPage = lazy(() => import('./pages/governance/BudgetPage'));
-const VolunteeringOpportunitiesPage = lazy(() => import('./pages/volunteering/VolunteeringOpportunitiesPage'));
-const VolunteerSatisfactionPage = lazy(() => import('./pages/volunteering/VolunteerSatisfactionPage'));
-const VolunteeringCharterPage = lazy(() => import('./pages/volunteering/VolunteeringCharterPage'));
 const BankAccountsPage = lazy(() => import('./pages/contact/BankAccountsPage'));
 const FeedbackFormPage = lazy(() => import('./pages/contact/FeedbackFormPage'));
 const FinancialReportsPage = lazy(() => import('./pages/governance/FinancialReportsPage'));
 const TrialBalancesPage = lazy(() => import('./pages/governance/TrialBalancesPage'));
 const FormsPage = lazy(() => import('./pages/governance/FormsPage'));
 const NgoSystemsPage = lazy(() => import('./pages/governance/NgoSystemsPage'));
-const VolunteeringSystemPage = lazy(() => import('./pages/governance/VolunteeringSystemPage'));
 const FinancialRegulationPage = lazy(() => import('./pages/governance/FinancialRegulationPage'));
-const VolunteeringPage = lazy(() => import('./pages/volunteering/VolunteeringPage'));
 const SatisfactionSurveyPage = lazy(() => import('./pages/SatisfactionSurveyPage'));
 const SatisfactionResultsPage = lazy(() => import('./pages/SatisfactionResultsPage'));
 const AdminLoginPage = lazy(() => import('./pages/AdminLoginPage'));
@@ -172,15 +167,10 @@ function App() {
             <Route path="/governance/trial-balances" element={<TrialBalancesPage />} />
             <Route path="/governance/forms" element={<FormsPage />} />
             <Route path="/governance/ngo-systems" element={<NgoSystemsPage />} />
-            <Route path="/governance/volunteering-system" element={<VolunteeringSystemPage />} />
             <Route path="/governance/financial-regulation" element={<FinancialRegulationPage />} />
             <Route path="/reports" element={<ReportsPage setCurrentPage={setCurrentPage} />} />
             <Route path="/transparency" element={<TransparencyPage setCurrentPage={setCurrentPage} />} />
             <Route path="/evaluation-results" element={<EvaluationResultsPage />} />
-            <Route path="/volunteering" element={<VolunteeringPage setCurrentPage={setCurrentPage} />} />
-            <Route path="/volunteering/opportunities" element={<VolunteeringOpportunitiesPage />} />
-            <Route path="/volunteering/satisfaction" element={<VolunteerSatisfactionPage />} />
-            <Route path="/volunteering/charter" element={<VolunteeringCharterPage />} />
             <Route path="/satisfaction-survey" element={<SatisfactionSurveyPage />} />
             <Route path="/satisfaction-results" element={<SatisfactionResultsPage />} />
             <Route path="/admin/login" element={<AdminLoginPage setCurrentPage={setCurrentPage} onLogin={handleLogin} />} />

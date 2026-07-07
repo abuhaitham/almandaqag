@@ -1,5 +1,5 @@
 import React from 'react';
-import type { NavLink, Stat, Project, NewsArticle, BoardMember, PolicyDocument, AnnualReport, FinancialStatement, MeetingMinute, TransparencyDocument, GovernanceGuide, Plan, System, Regulation, Committee, QuarterlyReport, Budget, VolunteeringCharter, FinancialRegulation, FeedbackForm, Form, TrialBalance, EvaluationResult, BasicDataItem, FoundingMember, GeneralAssemblyMember, VolunteeringOpportunity, BankAccount, Value } from './types';
+import type { NavLink, Stat, Project, NewsArticle, BoardMember, PolicyDocument, AnnualReport, FinancialStatement, MeetingMinute, TransparencyDocument, GovernanceGuide, Plan, System, Regulation, Committee, QuarterlyReport, Budget, FinancialRegulation, FeedbackForm, Form, TrialBalance, EvaluationResult, BasicDataItem, FoundingMember, GeneralAssemblyMember, BankAccount, Value } from './types';
 // Fix: Add ABOUT_IMAGE to imports. Other image import errors are resolved by updating assets/images.ts
 import {
     PROJECT_IMAGE_1,
@@ -92,7 +92,6 @@ export const NAV_LINKS: NavLink[] = [
     },
     { label: 'التقارير', href: 'javascript:void(0)', id: 'reports' },
     { label: 'المشاريع والأوقاف', href: 'javascript:void(0)', id: 'projects' },
-    { label: 'التطوع', href: 'javascript:void(0)', id: 'volunteering' },
     { label: 'المركز الإعلامي', href: 'javascript:void(0)', id: 'news' },
     {
         label: 'قياس رضا أصحاب العلاقة', href: 'javascript:void(0)', id: 'satisfaction',
@@ -226,7 +225,6 @@ export const PLANS_DATA: Plan[] = [
 
 export const SYSTEMS_DATA: System[] = [
     { title: 'نظام الجمعيات والمؤسسات الأهلية', href: 'javascript:void(0)' },
-    { title: 'نظام العمل التطوعي', href: 'javascript:void(0)' },
 ];
 
 export const COMMITTEES_DATA: Committee[] = [
@@ -243,17 +241,8 @@ export const BUDGET_DATA: Budget[] = [
     { title: 'الموازنة التقديرية لعام 2024', href: 'javascript:void(0)' },
 ];
 
-export const VOLUNTEERING_OPPORTUNITIES: VolunteeringOpportunity[] = [
-    { title: 'متطوع زراعي ميداني', description: 'المشاركة في مشاريع استصلاح الأراضي والدعم الزراعي.', status: 'open' },
-    { title: 'متطوع إعلامي', description: 'المساعدة في تغطية فعاليات وأنشطة الجمعية.', status: 'open' },
-];
-
 export const FEEDBACK_FORM_DATA: FeedbackForm[] = [
     { title: 'نموذج الشكاوى والمقترحات', href: 'javascript:void(0)' },
-];
-
-export const VOLUNTEERING_CHARTER_DATA: VolunteeringCharter[] = [
-    { title: 'تحميل ميثاق العمل التطوعي', href: 'javascript:void(0)' },
 ];
 
 export const BANK_ACCOUNTS: BankAccount[] = [
@@ -265,7 +254,6 @@ export const TRIAL_BALANCES_DATA: TrialBalance[] = [
 ];
 
 export const ACHIEVEMENTS_DATA: Stat[] = [
-    { icon: HeartIcon, value: "سيتم الاعلان لاحقا", label: "متطوع" },
     { icon: LightBulbIcon, value: "سيتم الاعلان لاحقا", label: "برنامج زراعي" },
     { icon: UsersIcon, value: "سيتم الاعلان لاحقا", label: "مزارع مستفيد" },
     { icon: CashIcon, value: "سيتم الاعلان لاحقا", label: "ريال قيمة المشاريع" },

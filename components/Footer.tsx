@@ -37,7 +37,6 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
               <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-secondary transition-colors">عن الجمعية</a></li>
               <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'projects')} className="hover:text-secondary transition-colors">مشاريعنا</a></li>
               <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'governance')} className="hover:text-secondary transition-colors">الحوكمة</a></li>
-              <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'volunteering')} className="hover:text-secondary transition-colors">التطوع</a></li>
               <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'contact')} className="hover:text-secondary transition-colors">اتصل بنا</a></li>
               <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'feedbackForm')} className="hover:text-secondary transition-colors">الشكاوى والمقترحات</a></li>
               <li><a href="javascript:void(0)" onClick={(e) => handleNavClick(e, 'satisfactionSurvey')} className="hover:text-secondary transition-colors">قياس الرضا</a></li>
