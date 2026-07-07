@@ -11,6 +11,7 @@ interface FinancialReportsPageProps {
 
 const FinancialReportsPage: React.FC<FinancialReportsPageProps> = () => {
     const reports = [
+        { title: 'القوائم المالية للجمعية لعام 2025', href: '/docs/التقرير-المالي-2025.pdf' },
         { title: 'التقرير المالي للجمعية لعام 2024', href: '/docs/التقرير-المالي-2024.pdf' },
         { title: 'التقرير المالي لعام 2023', href: '/docs/التقرير-المالي-2023.pdf' },
     ];
