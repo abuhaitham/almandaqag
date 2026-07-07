@@ -1,59 +1,61 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/about/AboutPage';
-import ProjectsPage from './pages/about/ProjectsPage';
-import NewsPage from './pages/NewsPage';
-import BoardPage from './pages/BoardPage';
-import ContactPage from './pages/contact/ContactPage';
-import GovernancePage from './pages/GovernancePage';
-import StructurePage from './pages/about/StructurePage';
-import PoliciesPage from './pages/governance/PoliciesPage';
-import ReportsPage from './pages/ReportsPage';
-import PartnersPage from './pages/about/PartnersPage';
-import TransparencyPage from './pages/TransparencyPage';
-import FinancialStatementsPage from './pages/governance/FinancialStatementsPage';
-import MeetingMinutesPage from './pages/MeetingMinutesPage';
-import EvaluationResultsPage from './pages/EvaluationResultsPage';
-import BasicDataPage from './pages/BasicDataPage';
-import VisionPage from './pages/about/VisionPage';
-import MissionPage from './pages/about/MissionPage';
-import GoalsPage from './pages/about/GoalsPage';
-import CertificatePage from './pages/about/CertificatePage';
-import GeneralAssemblyPage from './pages/about/GeneralAssemblyPage';
-import ComprehensiveModelPage from './pages/about/ComprehensiveModelPage';
-import ExecutiveDirectorPage from './pages/about/ExecutiveDirectorPage';
-import GovernanceGuidesPage from './pages/governance/GovernanceGuidesPage';
-import ComplianceGuidePage from './pages/governance/ComplianceGuidePage';
-import TransparencyGuidePage from './pages/governance/TransparencyGuidePage';
-import FinancialSafetyGuidePage from './pages/governance/FinancialSafetyGuidePage';
-import PlansPage from './pages/governance/PlansPage';
-import SystemsPage from './pages/governance/SystemsPage';
-import RegulationsPage from './pages/governance/RegulationsPage';
-import CommitteesPage from './pages/governance/CommitteesPage';
-import GeneralAssemblyGovPage from './pages/governance/GeneralAssemblyPage';
-import QuarterlyReportsPage from './pages/governance/QuarterlyReportsPage';
-import BudgetPage from './pages/governance/BudgetPage';
-import VolunteeringOpportunitiesPage from './pages/volunteering/VolunteeringOpportunitiesPage';
-import VolunteerSatisfactionPage from './pages/volunteering/VolunteerSatisfactionPage';
-import VolunteeringCharterPage from './pages/volunteering/VolunteeringCharterPage';
-import BankAccountsPage from './pages/contact/BankAccountsPage';
-import FeedbackFormPage from './pages/contact/FeedbackFormPage';
-import FinancialReportsPage from './pages/governance/FinancialReportsPage';
-import TrialBalancesPage from './pages/governance/TrialBalancesPage';
-import FormsPage from './pages/governance/FormsPage';
-import NgoSystemsPage from './pages/governance/NgoSystemsPage';
-import VolunteeringSystemPage from './pages/governance/VolunteeringSystemPage';
-import FinancialRegulationPage from './pages/governance/FinancialRegulationPage';
-import VolunteeringPage from './pages/volunteering/VolunteeringPage';
-import SatisfactionSurveyPage from './pages/SatisfactionSurveyPage';
-import SatisfactionResultsPage from './pages/SatisfactionResultsPage';
-import AdminLoginPage from './pages/AdminLoginPage';
-import AdminDashboardPage from './pages/AdminDashboardPage';
-import AnalyticsPage from './pages/AnalyticsPage';
 import { trackPageVisit } from './lib/analytics';
+
+// Lazy-loaded pages for code-splitting
+const AboutPage = lazy(() => import('./pages/about/AboutPage'));
+const ProjectsPage = lazy(() => import('./pages/about/ProjectsPage'));
+const NewsPage = lazy(() => import('./pages/NewsPage'));
+const BoardPage = lazy(() => import('./pages/BoardPage'));
+const ContactPage = lazy(() => import('./pages/contact/ContactPage'));
+const GovernancePage = lazy(() => import('./pages/GovernancePage'));
+const StructurePage = lazy(() => import('./pages/about/StructurePage'));
+const PoliciesPage = lazy(() => import('./pages/governance/PoliciesPage'));
+const ReportsPage = lazy(() => import('./pages/ReportsPage'));
+const PartnersPage = lazy(() => import('./pages/about/PartnersPage'));
+const TransparencyPage = lazy(() => import('./pages/TransparencyPage'));
+const FinancialStatementsPage = lazy(() => import('./pages/governance/FinancialStatementsPage'));
+const MeetingMinutesPage = lazy(() => import('./pages/MeetingMinutesPage'));
+const EvaluationResultsPage = lazy(() => import('./pages/EvaluationResultsPage'));
+const BasicDataPage = lazy(() => import('./pages/BasicDataPage'));
+const VisionPage = lazy(() => import('./pages/about/VisionPage'));
+const MissionPage = lazy(() => import('./pages/about/MissionPage'));
+const GoalsPage = lazy(() => import('./pages/about/GoalsPage'));
+const CertificatePage = lazy(() => import('./pages/about/CertificatePage'));
+const GeneralAssemblyPage = lazy(() => import('./pages/about/GeneralAssemblyPage'));
+const ComprehensiveModelPage = lazy(() => import('./pages/about/ComprehensiveModelPage'));
+const ExecutiveDirectorPage = lazy(() => import('./pages/about/ExecutiveDirectorPage'));
+const GovernanceGuidesPage = lazy(() => import('./pages/governance/GovernanceGuidesPage'));
+const ComplianceGuidePage = lazy(() => import('./pages/governance/ComplianceGuidePage'));
+const TransparencyGuidePage = lazy(() => import('./pages/governance/TransparencyGuidePage'));
+const FinancialSafetyGuidePage = lazy(() => import('./pages/governance/FinancialSafetyGuidePage'));
+const PlansPage = lazy(() => import('./pages/governance/PlansPage'));
+const SystemsPage = lazy(() => import('./pages/governance/SystemsPage'));
+const RegulationsPage = lazy(() => import('./pages/governance/RegulationsPage'));
+const CommitteesPage = lazy(() => import('./pages/governance/CommitteesPage'));
+const GeneralAssemblyGovPage = lazy(() => import('./pages/governance/GeneralAssemblyPage'));
+const QuarterlyReportsPage = lazy(() => import('./pages/governance/QuarterlyReportsPage'));
+const BudgetPage = lazy(() => import('./pages/governance/BudgetPage'));
+const VolunteeringOpportunitiesPage = lazy(() => import('./pages/volunteering/VolunteeringOpportunitiesPage'));
+const VolunteerSatisfactionPage = lazy(() => import('./pages/volunteering/VolunteerSatisfactionPage'));
+const VolunteeringCharterPage = lazy(() => import('./pages/volunteering/VolunteeringCharterPage'));
+const BankAccountsPage = lazy(() => import('./pages/contact/BankAccountsPage'));
+const FeedbackFormPage = lazy(() => import('./pages/contact/FeedbackFormPage'));
+const FinancialReportsPage = lazy(() => import('./pages/governance/FinancialReportsPage'));
+const TrialBalancesPage = lazy(() => import('./pages/governance/TrialBalancesPage'));
+const FormsPage = lazy(() => import('./pages/governance/FormsPage'));
+const NgoSystemsPage = lazy(() => import('./pages/governance/NgoSystemsPage'));
+const VolunteeringSystemPage = lazy(() => import('./pages/governance/VolunteeringSystemPage'));
+const FinancialRegulationPage = lazy(() => import('./pages/governance/FinancialRegulationPage'));
+const VolunteeringPage = lazy(() => import('./pages/volunteering/VolunteeringPage'));
+const SatisfactionSurveyPage = lazy(() => import('./pages/SatisfactionSurveyPage'));
+const SatisfactionResultsPage = lazy(() => import('./pages/SatisfactionResultsPage'));
+const AdminLoginPage = lazy(() => import('./pages/AdminLoginPage'));
+const AdminDashboardPage = lazy(() => import('./pages/AdminDashboardPage'));
+const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage'));
 
 export type Page = string;
 
@@ -213,7 +215,21 @@ function App() {
         }
         return <AnalyticsPage setCurrentPage={setCurrentPage} onLogout={handleLogout} />;
       default:
-        return <HomePage setCurrentPage={setCurrentPage} />;
+        return (
+          <div className="py-20 bg-light">
+            <div className="container mx-auto px-4 text-center">
+              <h1 className="text-6xl font-extrabold text-primary mb-4">404</h1>
+              <h2 className="text-2xl font-bold text-gray-700 mb-6">الصفحة غير موجودة</h2>
+              <p className="text-gray-500 mb-8">عذراً، الصفحة التي تبحث عنها غير متاحة.</p>
+              <button
+                onClick={() => setCurrentPage('home')}
+                className="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-md transition-colors"
+              >
+                العودة للرئيسية
+              </button>
+            </div>
+          </div>
+        );
     }
   };
 
@@ -221,7 +237,13 @@ function App() {
     <div className="flex flex-col min-h-screen font-sans">
       <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main className="flex-grow">
-        {renderPage()}
+        <Suspense fallback={
+          <div className="flex items-center justify-center py-20">
+            <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        }>
+          {renderPage()}
+        </Suspense>
       </main>
       <Footer setCurrentPage={setCurrentPage} />
     </div>

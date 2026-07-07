@@ -57,10 +57,8 @@ const FeedbackFormPage: React.FC = () => {
         priority: 'عادية'
       });
 
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 5000);
+      // Scroll to success message
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
       console.error('Error submitting feedback:', err);
       setError('حدث خطأ أثناء إرسال النموذج. الرجاء المحاولة مرة أخرى.');
@@ -108,13 +106,16 @@ const FeedbackFormPage: React.FC = () => {
 
             {/* Success Message */}
             {submitted && (
-              <div className="mb-6 p-6 bg-green-100 border-l-4 border-green-500 rounded-lg shadow-md animate-fade-in">
-                <div className="flex items-center gap-3">
-                  <div>
-                    <h3 className="font-bold text-green-800 text-xl">تم الإرسال بنجاح!</h3>
-                    <p className="text-green-700">شكراً لتواصلكم معنا. سيتم مراجعة رسالتكم والرد عليها في أقرب وقت ممكن.</p>
-                  </div>
-                </div>
+              <div className="mb-6 p-8 bg-green-50 border-2 border-green-500 rounded-lg shadow-lg text-center">
+                <div className="text-green-500 text-6xl mb-4">✓</div>
+                <h3 className="font-bold text-green-800 text-2xl mb-3">تم الإرسال بنجاح!</h3>
+                <p className="text-green-700 text-lg mb-6">شكراً لتواصلكم معنا. سيتم مراجعة رسالتكم والرد عليها في أقرب وقت ممكن.</p>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg transition-colors"
+                >
+                  إرسال رسالة أخرى
+                </button>
               </div>
             )}
 
@@ -128,7 +129,7 @@ const FeedbackFormPage: React.FC = () => {
             )}
 
             {/* Form Card */}
-            <div className="bg-white p-8 rounded-lg shadow-lg">
+            {!submitted && <div className="bg-white p-8 rounded-lg shadow-lg">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Type Selection */}
                 <div>
@@ -283,14 +284,14 @@ const FeedbackFormPage: React.FC = () => {
                   </button>
                 </div>
               </form>
-            </div>
+            </div>}
 
             {/* Additional Information */}
             <div className="mt-8 bg-gradient-to-r from-primary to-primary-dark text-white p-6 rounded-lg shadow-lg">
               <h3 className="text-xl font-bold mb-3">طرق التواصل الأخرى</h3>
               <div className="space-y-2 text-white/90">
-                <p>البريد الإلكتروني: info@almandaqag.org.sa</p>
-                <p>الهاتف: 0503774124</p>
+                <p>البريد الإلكتروني: Mandq.farmer@hotmail.com</p>
+                <p>الهاتف: 0505677925</p>
                 <p>أوقات العمل: الأحد - الخميس (8:00 ص - 4:00 م)</p>
               </div>
             </div>

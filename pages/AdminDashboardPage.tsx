@@ -73,6 +73,7 @@ const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ setCurrentPage,
     inProgress: 0,
     resolved: 0
   });
+  const [modalContent, setModalContent] = useState<{ title: string; body: string } | null>(null);
 
   useEffect(() => {
     fetchSurveys();
@@ -481,14 +482,10 @@ const AdminDashboardPage: React.FC<AdminDashboardPageProps> = ({ setCurrentPage,
                         <td className="px-2 py-3">
                           <button
                             onClick={() => {
-                              const details = `
-الجوانب الإيجابية:
-${survey.positive_aspects || 'لم يتم الإدخال'}
-
-المقترحات:
-${survey.suggestions || 'لم يتم الإدخال'}
-                              `;
-                              alert(details);
+                              setModalContent({
+                                title: 'تفاصيل الاستبيان',
+                                body: `الجوانب الإيجابية:\n${survey.positive_aspects || 'لم يتم الإدخال'}\n\nالمقترحات:\n${survey.suggestions || 'لم يتم الإدخال'}`
+                              });
                             }}
                             className="text-primary hover:text-primary-dark text-sm font-semibold"
                           >
@@ -583,7 +580,10 @@ ${survey.suggestions || 'لم يتم الإدخال'}
                               <div className="flex gap-2">
                                 <button
                                   onClick={() => {
-                                    alert(`الرسالة من: ${message.name}\nالبريد: ${message.email}\n\nالرسالة:\n${message.message}`);
+                                    setModalContent({
+                                      title: `رسالة من: ${message.name}`,
+                                      body: `البريد: ${message.email}\n\nالرسالة:\n${message.message}`
+                                    });
                                     if (!message.is_read) {
                                       markAsRead(message.id);
                                     }
@@ -745,22 +745,10 @@ ${survey.suggestions || 'لم يتم الإدخال'}
                               <div className="flex gap-2 flex-col">
                                 <button
                                   onClick={() => {
-                                    const details = `
-النوع: ${complaint.type}
-الاسم: ${complaint.name}
-البريد: ${complaint.email || 'غير متوفر'}
-الجوال: ${complaint.phone || 'غير متوفر'}
-الموضوع: ${complaint.subject}
-الأولوية: ${complaint.priority}
-الحالة: ${complaint.status}
-
-التفاصيل:
-${complaint.description}
-
-تاريخ الإنشاء: ${formatDate(complaint.created_at)}
-آخر تحديث: ${formatDate(complaint.updated_at)}
-                                    `;
-                                    alert(details);
+                                    setModalContent({
+                                      title: `${complaint.type}: ${complaint.subject}`,
+                                      body: `النوع: ${complaint.type}\nالاسم: ${complaint.name}\nالبريد: ${complaint.email || 'غير متوفر'}\nالجوال: ${complaint.phone || 'غير متوفر'}\nالموضوع: ${complaint.subject}\nالأولوية: ${complaint.priority}\nالحالة: ${complaint.status}\n\nالتفاصيل:\n${complaint.description}\n\nتاريخ الإنشاء: ${formatDate(complaint.created_at)}\nآخر تحديث: ${formatDate(complaint.updated_at)}`
+                                    });
                                     if (!complaint.is_read) {
                                       markComplaintAsRead(complaint.id);
                                     }
@@ -788,6 +776,12 @@ ${complaint.description}
                 <h3 className="text-xl font-bold text-primary mb-2">تحليلات الموقع</h3>
                 <p className="text-gray-600">عرض إحصائيات الزيارات والنشاط على الموقع</p>
               </div>
+              {(!import.meta.env.VITE_SUPABASE_URL || import.meta.env.VITE_SUPABASE_URL === 'https://your-project.supabase.co') && (
+                <div className="mb-6 p-4 bg-yellow-50 border-2 border-yellow-300 rounded-lg text-center">
+                  <p className="text-yellow-800 font-bold mb-1">تنبيه: Supabase غير مُفعّل</p>
+                  <p className="text-yellow-700 text-sm">لتفعيل تتبع الزيارات والتحليلات، يجب إعداد متغيرات البيئة VITE_SUPABASE_URL و VITE_SUPABASE_ANON_KEY في ملف .env</p>
+                </div>
+              )}
               <div className="text-center">
                 <button
                   onClick={() => setCurrentPage('analytics')}
@@ -800,6 +794,26 @@ ${complaint.description}
           )}
         </div>
       </section>
+
+      {/* Detail Modal */}
+      {modalContent && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setModalContent(null)}>
+          <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[80vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between p-4 border-b">
+              <h3 className="text-lg font-bold text-primary">{modalContent.title}</h3>
+              <button onClick={() => setModalContent(null)} className="text-gray-400 hover:text-gray-600 text-2xl leading-none">&times;</button>
+            </div>
+            <div className="p-6">
+              <pre className="whitespace-pre-wrap text-gray-700 text-sm font-sans leading-relaxed">{modalContent.body}</pre>
+            </div>
+            <div className="p-4 border-t text-left">
+              <button onClick={() => setModalContent(null)} className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 rounded-md transition-colors">
+                إغلاق
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
