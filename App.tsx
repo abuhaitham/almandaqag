@@ -1,9 +1,10 @@
-
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, lazy, Suspense, useCallback } from 'react';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import { trackPageVisit } from './lib/analytics';
+import { pageFromPath, pathFromPage } from './lib/pageRoutes';
 
 // Lazy-loaded pages for code-splitting
 const AboutPage = lazy(() => import('./pages/about/AboutPage'));
@@ -59,21 +60,42 @@ const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage'));
 
 export type Page = string;
 
+const NotFound: React.FC<{ setCurrentPage: (p: string) => void }> = ({ setCurrentPage }) => (
+  <div className="py-20 bg-light">
+    <div className="container mx-auto px-4 text-center">
+      <h1 className="text-6xl font-extrabold text-primary mb-4">404</h1>
+      <h2 className="text-2xl font-bold text-gray-700 mb-6">الصفحة غير موجودة</h2>
+      <p className="text-gray-500 mb-8">عذراً، الصفحة التي تبحث عنها غير متاحة.</p>
+      <button
+        onClick={() => setCurrentPage('home')}
+        className="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-md transition-colors"
+      >
+        العودة للرئيسية
+      </button>
+    </div>
+  </div>
+);
+
 function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('home');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const currentPage = pageFromPath(location.pathname);
   const [isAdmin, setIsAdmin] = useState(false);
 
-  const SESSION_TIMEOUT_MS = 30 * 60 * 1000; // 30 minutes
+  const SESSION_TIMEOUT_MS = 30 * 60 * 1000;
+
+  // setCurrentPage shim — routes existing prop-based navigation through the router
+  const setCurrentPage = useCallback((page: string) => {
+    navigate(pathFromPage(page));
+  }, [navigate]);
 
   useEffect(() => {
-    // Check if user is already logged in as admin
     const adminStatus = localStorage.getItem('isAdmin');
     const loginTime = localStorage.getItem('adminLoginTime');
 
     if (adminStatus === 'true' && loginTime) {
       const elapsed = Date.now() - parseInt(loginTime, 10);
       if (elapsed > SESSION_TIMEOUT_MS) {
-        // Session expired
         localStorage.removeItem('isAdmin');
         localStorage.removeItem('adminLoginTime');
         setIsAdmin(false);
@@ -81,157 +103,27 @@ function App() {
         setIsAdmin(true);
       }
     } else if (adminStatus === 'true') {
-      // Legacy login without timestamp — clear it
       localStorage.removeItem('isAdmin');
       setIsAdmin(false);
     }
+  }, []);
 
+  useEffect(() => {
     window.scrollTo(0, 0);
-
-    // Track page visit for analytics (exclude admin pages)
     if (!currentPage.startsWith('admin') && currentPage !== 'analytics') {
       trackPageVisit(currentPage);
     }
-  }, [currentPage]);
+  }, [location.pathname, currentPage]);
 
-  const handleLogin = () => {
-    setIsAdmin(true);
-  };
-
+  const handleLogin = () => setIsAdmin(true);
   const handleLogout = () => {
     localStorage.removeItem('isAdmin');
     localStorage.removeItem('adminLoginTime');
     setIsAdmin(false);
   };
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <HomePage setCurrentPage={setCurrentPage} />;
-      case 'about':
-        return <AboutPage />;
-      case 'vision':
-        return <VisionPage />;
-      case 'mission':
-        return <MissionPage />;
-      case 'goals':
-        return <GoalsPage />;
-      case 'certificate':
-        return <CertificatePage />;
-      case 'generalAssembly':
-        return <GeneralAssemblyPage />;
-      case 'comprehensiveModel':
-        return <ComprehensiveModelPage />;
-      case 'executiveDirector':
-        return <ExecutiveDirectorPage />;
-      case 'projects':
-        return <ProjectsPage />;
-      case 'news':
-        return <NewsPage />;
-      case 'board':
-        return <BoardPage />;
-      case 'contact':
-        return <ContactPage setCurrentPage={setCurrentPage} />;
-      case 'governance':
-        return <GovernancePage setCurrentPage={setCurrentPage} />;
-      case 'structure':
-        return <StructurePage />;
-      case 'policies':
-        return <PoliciesPage />;
-      case 'reports':
-        return <ReportsPage setCurrentPage={setCurrentPage} />;
-      case 'partnersPage':
-        return <PartnersPage />;
-      case 'transparency':
-        return <TransparencyPage setCurrentPage={setCurrentPage} />;
-      case 'financialStatements':
-        return <FinancialStatementsPage />;
-      case 'meetingMinutes':
-        return <MeetingMinutesPage />;
-      case 'evaluationResults':
-        return <EvaluationResultsPage />;
-      case 'basicData':
-        return <BasicDataPage />;
-      case 'governanceGuides':
-        return <GovernanceGuidesPage />;
-      case 'complianceGuide':
-        return <ComplianceGuidePage />;
-      case 'transparencyGuide':
-        return <TransparencyGuidePage />;
-      case 'financialSafetyGuide':
-        return <FinancialSafetyGuidePage />;
-      case 'plans':
-        return <PlansPage />;
-      case 'systems':
-        return <SystemsPage />;
-      case 'regulations':
-        return <RegulationsPage />;
-      case 'committees':
-        return <CommitteesPage />;
-      case 'generalAssemblyGov':
-        return <GeneralAssemblyGovPage />;
-      case 'financialReports':
-        return <FinancialReportsPage setCurrentPage={setCurrentPage} />;
-      case 'quarterlyReports':
-        return <QuarterlyReportsPage />;
-      case 'budget':
-        return <BudgetPage />;
-      case 'volunteering':
-        return <VolunteeringPage setCurrentPage={setCurrentPage} />;
-      case 'volunteeringOpportunities':
-        return <VolunteeringOpportunitiesPage />;
-      case 'volunteerSatisfaction':
-        return <VolunteerSatisfactionPage />;
-      case 'volunteeringCharter':
-        return <VolunteeringCharterPage />;
-      case 'bankAccounts':
-        return <BankAccountsPage />;
-      case 'feedbackForm':
-        return <FeedbackFormPage />;
-      case 'trialBalances':
-        return <TrialBalancesPage />;
-      case 'forms':
-        return <FormsPage />;
-      case 'ngoSystems':
-        return <NgoSystemsPage />;
-      case 'volunteeringSystem':
-        return <VolunteeringSystemPage />;
-      case 'financialRegulation':
-        return <FinancialRegulationPage />;
-      case 'satisfactionSurvey':
-        return <SatisfactionSurveyPage />;
-      case 'satisfactionResults':
-        return <SatisfactionResultsPage />;
-      case 'adminLogin':
-        return <AdminLoginPage setCurrentPage={setCurrentPage} onLogin={handleLogin} />;
-      case 'adminDashboard':
-        if (!isAdmin) {
-          return <AdminLoginPage setCurrentPage={setCurrentPage} onLogin={handleLogin} />;
-        }
-        return <AdminDashboardPage setCurrentPage={setCurrentPage} onLogout={handleLogout} />;
-      case 'analytics':
-        if (!isAdmin) {
-          return <AdminLoginPage setCurrentPage={setCurrentPage} onLogin={handleLogin} />;
-        }
-        return <AnalyticsPage setCurrentPage={setCurrentPage} onLogout={handleLogout} />;
-      default:
-        return (
-          <div className="py-20 bg-light">
-            <div className="container mx-auto px-4 text-center">
-              <h1 className="text-6xl font-extrabold text-primary mb-4">404</h1>
-              <h2 className="text-2xl font-bold text-gray-700 mb-6">الصفحة غير موجودة</h2>
-              <p className="text-gray-500 mb-8">عذراً، الصفحة التي تبحث عنها غير متاحة.</p>
-              <button
-                onClick={() => setCurrentPage('home')}
-                className="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-md transition-colors"
-              >
-                العودة للرئيسية
-              </button>
-            </div>
-          </div>
-        );
-    }
-  };
+  const requireAdmin = (element: React.ReactElement) =>
+    isAdmin ? element : <AdminLoginPage setCurrentPage={setCurrentPage} onLogin={handleLogin} />;
 
   return (
     <div className="flex flex-col min-h-screen font-sans">
@@ -242,7 +134,60 @@ function App() {
             <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
           </div>
         }>
-          {renderPage()}
+          <Routes>
+            <Route path="/" element={<HomePage setCurrentPage={setCurrentPage} />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/about/vision" element={<VisionPage />} />
+            <Route path="/about/mission" element={<MissionPage />} />
+            <Route path="/about/goals" element={<GoalsPage />} />
+            <Route path="/about/certificate" element={<CertificatePage />} />
+            <Route path="/about/general-assembly" element={<GeneralAssemblyPage />} />
+            <Route path="/about/comprehensive-model" element={<ComprehensiveModelPage />} />
+            <Route path="/about/executive-director" element={<ExecutiveDirectorPage />} />
+            <Route path="/about/projects" element={<ProjectsPage />} />
+            <Route path="/about/partners" element={<PartnersPage />} />
+            <Route path="/about/structure" element={<StructurePage />} />
+            <Route path="/about/basic-data" element={<BasicDataPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/board" element={<BoardPage />} />
+            <Route path="/contact" element={<ContactPage setCurrentPage={setCurrentPage} />} />
+            <Route path="/contact/bank-accounts" element={<BankAccountsPage />} />
+            <Route path="/contact/feedback" element={<FeedbackFormPage />} />
+            <Route path="/governance" element={<GovernancePage setCurrentPage={setCurrentPage} />} />
+            <Route path="/governance/policies" element={<PoliciesPage />} />
+            <Route path="/governance/guides" element={<GovernanceGuidesPage />} />
+            <Route path="/governance/guides/compliance" element={<ComplianceGuidePage />} />
+            <Route path="/governance/guides/transparency" element={<TransparencyGuidePage />} />
+            <Route path="/governance/guides/financial-safety" element={<FinancialSafetyGuidePage />} />
+            <Route path="/governance/plans" element={<PlansPage />} />
+            <Route path="/governance/systems" element={<SystemsPage />} />
+            <Route path="/governance/regulations" element={<RegulationsPage />} />
+            <Route path="/governance/committees" element={<CommitteesPage />} />
+            <Route path="/governance/general-assembly" element={<GeneralAssemblyGovPage />} />
+            <Route path="/governance/financial-reports" element={<FinancialReportsPage setCurrentPage={setCurrentPage} />} />
+            <Route path="/governance/quarterly-reports" element={<QuarterlyReportsPage />} />
+            <Route path="/governance/budget" element={<BudgetPage />} />
+            <Route path="/governance/financial-statements" element={<FinancialStatementsPage />} />
+            <Route path="/governance/meeting-minutes" element={<MeetingMinutesPage />} />
+            <Route path="/governance/trial-balances" element={<TrialBalancesPage />} />
+            <Route path="/governance/forms" element={<FormsPage />} />
+            <Route path="/governance/ngo-systems" element={<NgoSystemsPage />} />
+            <Route path="/governance/volunteering-system" element={<VolunteeringSystemPage />} />
+            <Route path="/governance/financial-regulation" element={<FinancialRegulationPage />} />
+            <Route path="/reports" element={<ReportsPage setCurrentPage={setCurrentPage} />} />
+            <Route path="/transparency" element={<TransparencyPage setCurrentPage={setCurrentPage} />} />
+            <Route path="/evaluation-results" element={<EvaluationResultsPage />} />
+            <Route path="/volunteering" element={<VolunteeringPage setCurrentPage={setCurrentPage} />} />
+            <Route path="/volunteering/opportunities" element={<VolunteeringOpportunitiesPage />} />
+            <Route path="/volunteering/satisfaction" element={<VolunteerSatisfactionPage />} />
+            <Route path="/volunteering/charter" element={<VolunteeringCharterPage />} />
+            <Route path="/satisfaction-survey" element={<SatisfactionSurveyPage />} />
+            <Route path="/satisfaction-results" element={<SatisfactionResultsPage />} />
+            <Route path="/admin/login" element={<AdminLoginPage setCurrentPage={setCurrentPage} onLogin={handleLogin} />} />
+            <Route path="/admin" element={requireAdmin(<AdminDashboardPage setCurrentPage={setCurrentPage} onLogout={handleLogout} />)} />
+            <Route path="/admin/analytics" element={requireAdmin(<AnalyticsPage setCurrentPage={setCurrentPage} onLogout={handleLogout} />)} />
+            <Route path="*" element={<NotFound setCurrentPage={setCurrentPage} />} />
+          </Routes>
         </Suspense>
       </main>
       <Footer setCurrentPage={setCurrentPage} />
